@@ -1,0 +1,32 @@
+{
+  "name": "portafolio_digital",
+  "version": "0.1.0",
+  "description": "Comparte tus proyectos en nuestra aplicación",
+  "main": "server.js",
+  "keywords": [
+    "portafolio",
+    "digital",
+    "javascript"
+  ],
+  "author": "juan",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "materialize-css": "^1.0.0",
+    "page": "^1.11.6",
+    "pug": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0",
+    "gulp": "^4.0.2",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^4.14.1",
+    "vinyl-source-stream": "^2.0.0"
+  }
+}
