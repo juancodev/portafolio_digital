@@ -6,7 +6,7 @@ main.innerHTML = 'Home, pulsa para navegar <a href="/signup">signup</a>';
 });
 
 page('/signup', function (){
-main.innerHTML = 'signup, pulsa para navegar <a href="/">Home</a>';  
+main.innerHTML = 'signup, pulsa para navegar <a href="/">inicio</a>';  
 });
 
 page();

@@ -27,6 +27,11 @@
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.1.0",
     "node-sass": "^4.14.1",
-    "vinyl-source-stream": "^2.0.0"
+    "vinyl-source-stream": "^2.0.0",
+    "watchify": "^3.11.1"
+  },
+  "scripts": {
+    "build": "gulp",
+    "start": "gulp watch & node server.js"
   }
 }
