@@ -1,12 +1,8 @@
+//EN ESTE CASO, REQUERIMOS EL MÓDULO PAGE PARA INICIALIZARLO.
 const page = require('page');
-const main = document.getElementById('main-container');
 
-page('/', function (ctx, next) {
-main.innerHTML = 'Home, pulsa para navegar <a href="/signup">signup</a>';
-});
-
-page('/signup', function (){
-main.innerHTML = 'signup, pulsa para navegar <a href="/">inicio</a>';  
-});
+//DESPUÉS REQUERIMOS LOS MÓDULOS DE LA HOMEPAGE Y SIGNUP, RESPETANDO EL ORDEN DE LA MISMA.
+require('./homepage');
+require('./signup');
 
 page();
