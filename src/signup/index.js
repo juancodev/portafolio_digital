@@ -1,5 +1,5 @@
 const page = require('page');
-const empty = require('empty');
+const empty = require('empty-element');
 const template = require('./template');
 
 
