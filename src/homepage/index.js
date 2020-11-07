@@ -1,6 +1,6 @@
 const page = require('page');
 
-page('/', function (ctx, next) {
+page('/', function () {
 let main = document.getElementById('main-container');
-main.innerHTML = '<h1 Prueba para navegar en el ><a href="/signup">Signup</a></h1>'
+main.innerHTML = '<a href="/signup">Signup</a>'
 });

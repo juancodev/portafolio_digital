@@ -5,7 +5,7 @@ module.exports = yo`<div class="container">
         <div class="col s10 push-s1">
           <div class="row">
             <div class="col m5 hide-on-small-only">
-              <img class="iphone" src="public/telefonogram.png" />
+              <img class="iphone" src="telefonogram.png" />
             </div>
             <div class="col s12 m7">
               <div class="row">
@@ -19,10 +19,10 @@ module.exports = yo`<div class="container">
                     </div>
                     <div class="divider"></div>
                     <div class="section">
-                      <input type="email" name="email" placeholder="Correo electrónico"></input>
-                      <input type="text" name="name" placeholder="Nombre completo"></input>
-                      <input type="text" name="username" placeholder="Nombre de usuario"></input>
-                      <input type="password" name="password" placeholder="Contraseña"></input>
+                      <input type="email" name="email" placeholder="Correo electrónico" />
+                      <input type="text" name="name" placeholder="Nombre completo" />
+                      <input type="text" name="username" placeholder="Nombre de usuario" />
+                      <input type="password" name="password" placeholder="Contraseña" />
                       <button class="btn waves-effect waves-light btn-signup" type="submit">Regístrate</button>
                     </div>
                   </form>
