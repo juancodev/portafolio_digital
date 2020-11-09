@@ -4,5 +4,6 @@ const page = require('page');
 //DESPUÉS REQUERIMOS LOS MÓDULOS DE LA HOMEPAGE Y SIGNUP, RESPETANDO EL ORDEN DE LA MISMA.
 require('./homepage');
 require('./signup');
+require('./signin');
 
 page();
