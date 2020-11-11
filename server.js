@@ -7,17 +7,17 @@ aplication.set('view engine', 'pug');
 //DEFINIRLE UN NUEVO MILDDWILE Y SIRVE PARA UTILIZAR UN ARCHIVO ESTATICO EN ESTE CASO SERÍA COMO UNA CARPETA VIRTUAL "PUBLIC".
 aplication.use(express.static('public'))
 
-//EN ESTE CASO SE DEFINEN LAS RUTAS QUE HACER PARTE DE NUESTRO PROYECTO.
+//EN ESTE CASO SE DEFINEN LAS RUTAS QUE HACER PARTE DE NUESTRO PROYECTO E INDICANDO EL OBJETO PARA EL TÍTULO DE NUESTRA PÁGINA.
 aplication.get('/', (req, res)=>{
-    res.render('index');
+    res.render('index', { title: 'Portafolio'});
 });
 
 aplication.get('/signup', (req, res)=>{
-    res.render('index');
+    res.render('index', { title : 'Portafolio - Signup'});
 });
 
 aplication.get('/signin', (req, res)=>{
-    res.render('index');
+    res.render('index', { title : 'Portafolio - Signin'});
 })
 
 /* CON ESA CONDICIÓN ESTAMOS INDICANDO QUE SI ERROR ES DIFERENTE A NULL ENTONCES LA APLICACIÓN ME RETORNE NADA DE LO CONTRARIO ME MUESTRE UN MENSAJE EN CONSOLA DICIENDO QUE HUBO UN ERROR, "process.exit(1)" NOS SIRVE PARA INDICAR QUE SI HAY UN ERROR DETENGA LA APLICACIÓN DE NO HABER SIEMPRE DEBE SER DISTINTO QUE "0". */
