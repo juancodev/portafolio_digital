@@ -1,5 +1,5 @@
 //ACÁ LE ESTAMOS GENERANDO LA VARIABLE PARA QUE TODO LO COLOQUE CON COLORES SECUNDARIOS.
-$secondary-color: #125688;
+$secondary-color: #123788;
 
 //EN ESTA LÍNEA DE CÓDIGO ESTAMOS IMPORTANDO LA DEPENDECIA DE MATERIALIZE.
 @import "node_modules/materialize-css/sass/materialize.scss";
@@ -33,9 +33,10 @@ body {
   text-align: center;
 }
 
-.signup-box .portafolio {
+.portafolio {
   font-family: "Oleo Script";
   font-size: 42px;
+  color: $secondary-color;
 }
 
 .signup-form {
@@ -59,4 +60,11 @@ body {
 
 .signup-form .btn.btn-signup {
   background-color: #12e33b;
+}
+
+.header {
+  background-color: rgb(0, 167, 117);
+  color: $secondary-color;
+  box-shadow: none;
+  border-bottom: 1px solid #edeeee;
 }
