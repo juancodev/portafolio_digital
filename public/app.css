@@ -6530,11 +6530,11 @@ body {
   color: #010542;
   font-family: Montserrat; }
 
-#main-container {
-  margin: 30px auto; }
-
 .phone {
   max-width: 100%; }
+
+.landing {
+  margin: 30px auto; }
 
 .site-footer {
   text-transform: uppercase;
@@ -6551,7 +6551,7 @@ body {
 .portafolio {
   font-family: "Oleo Script";
   font-size: 42px;
-  color: #123788; }
+  color: #123788 !important; }
 
 .signup-form {
   width: 65%;
@@ -6576,3 +6576,6 @@ body {
   color: #123788;
   box-shadow: none;
   border-bottom: 1px solid #edeeee; }
+
+.timeline {
+  padding: 30px; }
