@@ -10,7 +10,7 @@ let signupForm = yo `<div class="col s12 m7">
                     <h2>Regístrate para ver los proyectos de los estudiantes del IUTAJS</h2>
                     <div class="section">
                       <a class="btn btn-fb hide-on-small-only">Iniciar sesión con Facebook</a>
-                      <a class="btn btn-fb hide-on-med-and-up"><i class="fab fa-facebook"></i>Iniciar sesión</a>
+                      <a class="btn btn-fb hide-on-med-and-up"><i class="fab fa-facebook-square"></i>Iniciar sesión</a>
                     </div>
                     <div class="divider"></div>
                     <div class="section">
