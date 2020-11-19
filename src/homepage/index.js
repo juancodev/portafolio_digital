@@ -7,5 +7,30 @@ const title = require('title');
 page('/', function (ctx, next){
   title('Portafolio');
   let main = document.getElementById('main-container');
-  empty(main).appendChild(template);
+  //EN ESTE CASO PONDREMOS UN OBJETO CON LOS DATOS, ICONOS Y USUARIO QUIEN SUBIÓ LA FOTO
+  let pictures = [
+  {
+    user: {
+      username: 'jmontilla',
+      //EN EL AVATAR IRÁ LA IMAGEN DEL USUARIO
+      avatar: ''
+    },
+    url: 'telefonogram',
+    likes: 10,
+    liked: true
+  },
+
+  {
+    user: {
+      username: 'jmontilla',
+      //EN EL AVATAR IRÁ LA IMAGEN DEL USUARIO
+      avatar: ''
+    },
+    url: 'telefonogram',
+    likes: 1,
+    liked: true
+  },
+  ];
+
+  empty(main).appendChild(template(pictures));
 });

@@ -72,3 +72,32 @@ body {
 .timeline {
   padding: 30px;
 }
+
+$avatar-size: 48px;
+
+.avatar {
+  width: $avatar-size;
+  height: $avatar-size;
+  border-radius: 50%;
+  float: left;
+  margin-right: 12px;
+}
+
+.card small.time {
+  line-height: $avatar-size;
+}
+
+.card p {
+  padding: 20px 0;
+}
+
+.card likes {
+  line-height: 30px;
+  margin-left: 12px;
+}
+
+.card i {
+  font-size: 30px;
+}
+
+//clase 4.16, minuto 23. Colocar el Fontawesome de una estrella como favorito y configurarla, adicional agregar la url de la imagen y la imagen de perfil del usuario (volver a ver la clase).

@@ -1,10 +1,21 @@
-let yo = require('yo-yo');
+const yo = require('yo-yo');
 
-module.exports = yo`<div class="card">
+//CONTINUAMOS CREANDO UN ARCHIVO INDEX EN DONDE COLOCAREMOS LA LÓGICA DE NUESTRO PROYECTO CON REFERENCIA A LAS IMÁGENES SUBIDAS
+
+module.exports = function (pic) { 
+  return yo`<div class="card">
     <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" src="images/office.jpg">
+      <img class="activator" src="${pic.url}">
     </div>
     <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4">Card Title</span>
+      <a href="/user/${pic.user.username}" class="card-title">
+        <img src="${pic.user.avatar}" class="avatar" />
+        <span class="username">${pic.user.username}</span>
+      </a>
+      <small class="rigth time">Hace un día</small>
+      <p>
+        <a class="left" href="#"><i>FONTAWESOME</i></a>
+        <span class="left likes">${pic.likes} favoritos</span>
+      </p>
     </div>
-  </div>`
+  </div>`;};
