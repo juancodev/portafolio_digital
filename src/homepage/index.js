@@ -13,9 +13,9 @@ page('/', function (ctx, next){
     user: {
       username: 'jmontilla',
       //EN EL AVATAR IRÁ LA IMAGEN DEL USUARIO
-      avatar: ''
+      avatar: 'fotoperfil.jpg'
     },
-    url: 'telefonogram',
+    url: 'https://materializecss.com/images/office.jpg',
     likes: 10,
     liked: true
   },
@@ -24,9 +24,9 @@ page('/', function (ctx, next){
     user: {
       username: 'jmontilla',
       //EN EL AVATAR IRÁ LA IMAGEN DEL USUARIO
-      avatar: ''
+      avatar: 'fotoperfil.jpg'
     },
-    url: 'telefonogram',
+    url: 'https://materializecss.com/images/office.jpg',
     likes: 1,
     liked: true
   },
