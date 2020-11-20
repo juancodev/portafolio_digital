@@ -6587,6 +6587,9 @@ body {
   float: left;
   margin-right: 12px; }
 
+.card .username {
+  color: #123788; }
+
 .card small.time {
   line-height: 48px; }
 
@@ -6599,3 +6602,6 @@ body {
 
 .card i {
   font-size: 30px; }
+
+.card .far-fa-start {
+  color: #123788; }

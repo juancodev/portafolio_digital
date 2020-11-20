@@ -12,7 +12,6 @@ page('/', function (ctx, next){
   {
     user: {
       username: 'jmontilla',
-      //EN EL AVATAR IRÁ LA IMAGEN DEL USUARIO
       avatar: 'fotoperfil.jpg'
     },
     url: 'https://materializecss.com/images/office.jpg',
@@ -23,7 +22,6 @@ page('/', function (ctx, next){
   {
     user: {
       username: 'jmontilla',
-      //EN EL AVATAR IRÁ LA IMAGEN DEL USUARIO
       avatar: 'fotoperfil.jpg'
     },
     url: 'https://materializecss.com/images/office.jpg',
@@ -31,6 +29,6 @@ page('/', function (ctx, next){
     liked: true
   },
   ];
-
+  //PASAMOS EN LA LINEA 33 EL ARRAY A EL TEMPLATE DE LA HOMEPAGE
   empty(main).appendChild(template(pictures));
 });

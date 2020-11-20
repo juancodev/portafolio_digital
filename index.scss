@@ -83,6 +83,10 @@ $avatar-size: 48px;
   margin-right: 12px;
 }
 
+.card .username {
+  color: $secondary-color;
+}
+
 .card small.time {
   line-height: $avatar-size;
 }
@@ -98,6 +102,10 @@ $avatar-size: 48px;
 
 .card i {
   font-size: 30px;
+}
+
+.card .far-fa-start {
+  color: $secondary-color;
 }
 
 //clase 4.16, minuto 23. Colocar el Fontawesome de una estrella como favorito y configurarla, adicional agregar la url de la imagen y la imagen de perfil del usuario (volver a ver la clase).
