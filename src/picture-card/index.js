@@ -14,8 +14,14 @@ module.exports = function (pic) {
       </a>
       <small class="rigth time">Hace un día</small>
       <p>
-        <a class="left" href="#"><i class="far fa-star"></i></a>
+        <a class="left" href="#" onclick=${like}><i class="far fa-star"></i></a>
         <span class="left likes">${pic.likes} favoritos</span>
       </p>
     </div>
-  </div>`;};
+  </div>`;
+
+  function like() {
+
+  }
+
+};
