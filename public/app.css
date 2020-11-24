@@ -6603,5 +6603,15 @@ body {
 .card i {
   font-size: 30px; }
 
-.card .far-fa-start {
+.card .far-fa-star {
   color: #123788; }
+
+.card .fas-fa-star {
+  color: #00838f;
+  display: none; }
+
+.card.liked .fas-fa-star {
+  display: block; }
+
+.card.liked .far-fa-star {
+  display: none; }

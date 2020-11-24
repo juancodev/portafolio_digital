@@ -104,8 +104,23 @@ $avatar-size: 48px;
   font-size: 30px;
 }
 
-.card .far-fa-start {
+.card .far-fa-star {
   color: $secondary-color;
 }
 
-//clase 4.16, minuto 23. Colocar el Fontawesome de una estrella como favorito y configurarla, adicional agregar la url de la imagen y la imagen de perfil del usuario (volver a ver la clase).
+.card .fas-fa-star {
+  color: #00838f;
+  display: none;
+}
+
+//SASS NOS PERMITE CREAR SELECTORES PARA PODER COLOCARLOS UNOS DENTRO DE LOS OTROS
+.card.liked {
+ .fas-fa-star {
+   display: block;
+ }
+ .far-fa-star {
+   display: none;
+ }
+}
+
+//no muestra los iconos uno encima del otro.
