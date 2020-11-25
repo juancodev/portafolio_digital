@@ -6610,8 +6610,8 @@ body {
   color: #00838f;
   display: none; }
 
-.card.liked .fas-fa-star {
+.card .liked .far-fa-star {
   display: block; }
 
-.card.liked .far-fa-star {
+.card .liked .fas-fa-star {
   display: none; }

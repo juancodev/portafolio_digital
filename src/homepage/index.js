@@ -16,7 +16,7 @@ page('/', function (ctx, next){
     },
     url: 'https://materializecss.com/images/office.jpg',
     likes: 10,
-    liked: true
+    liked: false
   },
 
   {

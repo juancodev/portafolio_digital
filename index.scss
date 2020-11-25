@@ -114,11 +114,11 @@ $avatar-size: 48px;
 }
 
 //SASS NOS PERMITE CREAR SELECTORES PARA PODER COLOCARLOS UNOS DENTRO DE LOS OTROS
-.card.liked {
- .fas-fa-star {
+.card .liked {
+ .far-fa-star {
    display: block;
  }
- .far-fa-star {
+ .fas-fa-star {
    display: none;
  }
 }

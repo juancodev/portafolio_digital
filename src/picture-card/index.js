@@ -17,19 +17,19 @@ module.exports = function pictureCards(pic) {
       </a>
       <small class="rigth time">Hace un día</small>
       <p>
-        <a class="left" href="#" onclick=${like}><i class="far fa-star"></i></a>
-        <a class="left" href="#" onclick=${disLike}><i class="fas fa-star"></i></a>
+        <a class="left" href="#" onclick=${like.bind(null, true)}><i class="far fa-star"></i></a>
+        <a class="left" href="#" onclick=${like.bind(null, false)}><i class="fas fa-star"></i></a>
         <span class="left likes">${picture.likes} favoritos</span>
       </p>
     </div>
   </div>`;
   };
 
-  function like() {
+  function like(liked) {
     //SE TOMA EL ARRAYS Y SE LE AGREGA LA PROPIEDAD.
-    pic.liked = true;
+    pic.liked = liked;
     //SE LE INDICA A EL OBJETO CON SU PROPIEDAD pic.likes LA SUMA O LA RESTA
-    pic.likes++;
+    pic.likes += liked ? 1 : -1;
     //SE CREA LA NUEVA VARIABLE QUE SE VA A ENCARGAR DE GUARDAR LOS NUEVOS CAMBIOS
     let newEl= render(pic);
     //Y SE UTILIZA EL MÉTODO DE "yo.update()" COLOCANDO COMO PARÁMETRO EL ELEMENTO VIEJO Y EL NUEVO ELEMENTO ACTUALIZADO.
@@ -37,14 +37,6 @@ module.exports = function pictureCards(pic) {
     //ESTE RETURN ME PERMITE EVITAR QUE SE VUELVA A REPETIR LA MISMA SENTECIA
     return false
   };
-
-  function disLike() {
-    pic.liked = false;
-    pic.likes--;
-    let newEl = render(pic);
-    yo.update(el, newEl);
-    return false
-  }
 
   el = render(pic);
   return el;
