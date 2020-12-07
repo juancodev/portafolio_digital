@@ -3527,7 +3527,7 @@ small {
     .card .card-content p {
       margin: 0; }
     .card .card-content .card-title {
-      display: block;
+      display: inline;
       line-height: 32px;
       margin-bottom: 8px; }
       .card .card-content .card-title i {
@@ -6578,7 +6578,7 @@ body {
   border-bottom: 1px solid #edeeee; }
 
 .timeline {
-  padding: 30px; }
+  padding: 30px 0; }
 
 .avatar {
   width: 48px;
@@ -6610,8 +6610,8 @@ body {
   color: #00838f;
   display: none; }
 
-.card .liked .far-fa-star {
+.card.liked .far-fa-star {
   display: block; }
 
-.card .liked .fas-fa-star {
+.card.liked .fas-fa-star {
   display: none; }

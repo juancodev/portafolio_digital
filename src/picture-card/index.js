@@ -1,5 +1,5 @@
 const yo = require('yo-yo');
-
+const moment = require('moment');
 //CONTINUAMOS CREANDO UN ARCHIVO INDEX EN DONDE COLOCAREMOS LA LÓGICA DE NUESTRO PROYECTO CON REFERENCIA A LAS IMÁGENES SUBIDAS
 
 //LUEGO CREAMOS UNA FUNCION QUE NOS PERMITA RENDERIZAR LA IMAGEN CADA VEZ HAYA CAMBIOS
@@ -15,7 +15,7 @@ module.exports = function pictureCards(pic) {
         <img src="${picture.user.avatar}" class="avatar" />
         <span class="username">${picture.user.username}</span>
       </a>
-      <small class="rigth time">Hace un día</small>
+      <small class="right time">${moment(picture.createAt).fromNow()}</small>
       <p>
         <a class="left" href="#" onclick=${like.bind(null, true)}><i class="far fa-star"></i></a>
         <a class="left" href="#" onclick=${like.bind(null, false)}><i class="fas fa-star"></i></a>

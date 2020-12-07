@@ -70,7 +70,7 @@ body {
 }
 
 .timeline {
-  padding: 30px;
+  padding: 30px 0;
 }
 
 $avatar-size: 48px;
@@ -114,13 +114,13 @@ $avatar-size: 48px;
 }
 
 //SASS NOS PERMITE CREAR SELECTORES PARA PODER COLOCARLOS UNOS DENTRO DE LOS OTROS
-.card .liked {
+.card.liked {
  .far-fa-star {
    display: block;
- }
- .fas-fa-star {
-   display: none;
- }
+  }
+  .fas-fa-star {
+    display: none;
+  }
 }
 
 //no muestra los iconos uno encima del otro.
