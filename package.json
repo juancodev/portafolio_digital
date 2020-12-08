@@ -13,8 +13,8 @@
   "dependencies": {
     "empty-element": "^1.0.0",
     "express": "^4.17.1",
+    "intl-relativeformat": "^6.4.3",
     "materialize-css": "^1.0.0",
-    "moment": "^2.29.1",
     "page": "^1.11.6",
     "pug": "^3.0.0",
     "title": "^3.4.2",

@@ -1,5 +1,11 @@
 const yo = require('yo-yo');
+//ESTA LIBRERÍA NOS PERMITE MODIFICAR LA HORA RELATIVA DESDE EL TIEMPO EN QUE SE PUBLICÓ
 const moment = require('moment');
+const IntlRelativeFormat = require('intl-relativeformat');
+/* const IntlRelativeFormat = windown.IntlRelativeFormat = require('intl-relativeformat');
+DE ESTA FORMA SE PUEDE COLOCAR EL FORMATO RELATIVO EN EL OBJETO DE WINDOWS GLOBAL */
+let rf = new IntlRelativeFormat('es');
+let output = rf.format();
 //CONTINUAMOS CREANDO UN ARCHIVO INDEX EN DONDE COLOCAREMOS LA LÓGICA DE NUESTRO PROYECTO CON REFERENCIA A LAS IMÁGENES SUBIDAS
 
 //LUEGO CREAMOS UNA FUNCION QUE NOS PERMITA RENDERIZAR LA IMAGEN CADA VEZ HAYA CAMBIOS
@@ -15,7 +21,7 @@ module.exports = function pictureCards(pic) {
         <img src="${picture.user.avatar}" class="avatar" />
         <span class="username">${picture.user.username}</span>
       </a>
-      <small class="right time">${moment(picture.createAt).fromNow()}</small>
+      <small class="right time">${rf.format(picture.createAt)}</small>
       <p>
         <a class="left" href="#" onclick=${like.bind(null, true)}><i class="far fa-star"></i></a>
         <a class="left" href="#" onclick=${like.bind(null, false)}><i class="fas fa-star"></i></a>
