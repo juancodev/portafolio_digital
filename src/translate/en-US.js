@@ -3,4 +3,4 @@ module.exports = {
             '=0 {no likes}' +
             '=1 {# like}' +
             '=other { # likes}}'
-}
+};

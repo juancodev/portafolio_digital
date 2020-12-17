@@ -4,8 +4,8 @@ const IntlRelativeFormat = require('intl-relativeformat');
 const IntlMessageFormat = require('intl-messageformat');
 /* const IntlRelativeFormat = windown.IntlRelativeFormat = require('intl-relativeformat');
 DE ESTA FORMA SE PUEDE COLOCAR EL FORMATO RELATIVO EN EL OBJETO DE WINDOWS GLOBAL */
-let rf = new IntlRelativeFormat('es');
-let output = rf.format();
+/* let rf = new IntlRelativeFormat('es'); */
+/* let output = rf.format(); */
 
 let es = require('./es');
 let en = require('./en-US');
@@ -17,15 +17,15 @@ MESSAGES['PODEMOS ESCRIBIR ESPACIOS ENTRE PROPIEDADES']
 */
 MESSAGES['en-US'] = en;
 //CREAMOS UNA VARIABLE QUE POR AHORA VA A ESTAR EN ESPAÑOL
-let locales = 'es';
+let locale = 'es';
 
 //opts = {}, NOS ENVIA UN OBJETO VACIO
 module.exports = {
   message : function (text, opts = {}){
-    let msg = new IntlMessageFormat(MESSAGES[locales][text], locales, null);
+    const msg = new  IntlMessageFormat(MESSAGES['es'][text], locale);
     return msg.format(opts)
   },
-  date: new IntlRelativeFormat(locales)
+  date: new IntlRelativeFormat(locale)
 }
 
 /*  PROBLEMA CON LA INTERNACIONALIZACIÓN 4.20*/
