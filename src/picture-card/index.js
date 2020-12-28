@@ -20,7 +20,7 @@ module.exports = function pictureCards(pic) {
         <img src="${picture.user.avatar}" class="avatar" />
         <span class="username">${picture.user.username}</span>
       </a>
-      <small class="right time">${rf.format(picture.createAt)}</small>
+      <small class="right time">hace 1 día</small>
       <p>
         <a class="left" href="#" onclick=${like.bind(null, true)}><i class="far fa-star"></i></a>
         <a class="left" href="#" onclick=${like.bind(null, false)}><i class="fas fa-star"></i></a>
