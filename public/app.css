@@ -3527,7 +3527,7 @@ small {
     .card .card-content p {
       margin: 0; }
     .card .card-content .card-title {
-      display: inline;
+      display: block;
       line-height: 32px;
       margin-bottom: 8px; }
       .card .card-content .card-title i {
@@ -6615,3 +6615,22 @@ body {
 
 .card.liked .fas-fa-star {
   display: none; }
+
+.form-upload span, .form-upload button {
+  color: #fafafa; }
+
+.form-upload .fileUpload {
+  position: relative;
+  overflow: hidden;
+  margin: 10px; }
+  .form-upload .fileUpload input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0); }

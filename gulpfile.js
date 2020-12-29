@@ -45,12 +45,20 @@ return gulp.src('assets/*')
 });
 
 /*EN ESTE CASO CREAMOS OTRA TAREA QUE NOS HAGA PROCEDER AUTOMÁTICAMENTE
-GULP Y NOS CONVIERTA TODO EL CÓDIGO UTILIZANDO LAS FUNCIONES DE EMCSCRIPT.
+GULP Y NOS CONVIERTA TODO EL CÓDIGO UTILIZANDO LAS FUNCIONES DE ECMASCRIPT.
 */
 
 function compile(watch) {
     //ESTA VARIABLE NOS PERMITE VIGILAR EL ARCHIVO A MODIFICAR
-    let bundle = watchify(browserify('./src/index.js', {debug: true}));
+    let bundle = browserify('./src/index.js', {debug: true});
+
+    if (watch) {
+      bundle = watchify(bundle);
+        bundle.on('update', ()=>{
+            console.log('--> Bundling...');
+            rebundle();
+        });
+    };
     
     //ESTA FUNCION NOS PERMITE REALIZAR LOS CAMBIOS REQUERIDOS Y CONVERTIRLO EN ALGO QUE ENTIENDA GULP
     function rebundle() {
@@ -64,12 +72,6 @@ function compile(watch) {
     };
     
     //CREAMOS UNA CONDICIÓN EN DONDE NOS VA A AVISAR SI EL CAMBIO OCURRE O NO
-    if (watch) {
-        bundle.on('update', ()=>{
-            console.log('--> Bundling...');
-            rebundle();
-        });
-    };
 
     rebundle();
 };
