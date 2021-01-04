@@ -1,6 +1,19 @@
 const express = require('express');
-const aplication = express();
+const multer = require('multer');
+const ext = require('file-extension');
 
+let storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './uploads')
+  },
+  filename: function (req, file, cb) {
+    cb(null, +Date.now() + '.' + ext(file.originalname))
+  }
+})
+
+let upload = multer({ storage: storage }).single('picture');
+
+const aplication = express();
 //PARA INDICARLE AL SERVIDOR QUE UTILIZAREMOS UN MOTOR DE PLANTILLA.
 aplication.set('view engine', 'pug');
 
@@ -52,6 +65,15 @@ aplication.get('/api/pictures', function (req, res){
   setTimeout(function () {
   res.send(pictures);
   }, 2000);
+})
+
+aplication.post('/api/pictures', function (req, res) {
+  upload(req, res, function (err){
+    if (err) {
+      return res.send(500, "Error al subir archivo");
+    }
+    res.send('Archivo subido correctamente');
+  })
 })
 
 /* CON ESA CONDICIÓN ESTAMOS INDICANDO QUE SI ERROR ES DIFERENTE A NULL ENTONCES LA APLICACIÓN ME RETORNE NADA DE LO CONTRARIO ME MUESTRE UN MENSAJE EN CONSOLA DICIENDO QUE HUBO UN ERROR, "process.exit(1)" NOS SIRVE PARA INDICAR QUE SI HAY UN ERROR DETENGA LA APLICACIÓN DE NO HABER SIEMPRE DEBE SER DISTINTO QUE "0". */

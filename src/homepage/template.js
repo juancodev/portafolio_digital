@@ -1,3 +1,4 @@
+const request = require('superagent');
 const yo = require('yo-yo');
 //EN ESTE CASO NO VAMOS A REQUERIR LA FUNCIÓN landing SINO LA FUNCIÓN layaout.
 const layaout = require('../layout');
@@ -8,7 +9,7 @@ module.exports = function pictureCard (pictures) {
   let el = yo `<div class="container timeline">
     <div class="row">
       <div class="col s12 m10 offset-m1 l8 offset-l2 center-align">
-        <form enctype="multipar/form-data" class="form-upload" id="formUpload">
+        <form enctype="multipart/form-data" class="form-upload" id="formUpload" onsubmit=${onsubmit}>
           <div id="fileName" class="fileUpload btn btn-flat cyan">
             <span><i class="fas fa-camera-retro"></i> Subir una foto</span>
             <input name="picture" id="file" type="file" class="upload" onchange=${onchange}/>
@@ -41,6 +42,20 @@ module.exports = function pictureCard (pictures) {
   function onchange() {
     toggleButtons();
   }
+
+  //TODAS LAS FUNCIONES QUE COMIENZAN CON ON, RECIBEN UN EVENTO COMO PARÁMETRO
+  function onsubmit(ev){
+    ev.preventDefault();
+
+    let data = new FormData(this)
+    request
+      .post('/api/pictures')
+      .send(data)
+      .end(function (err, res) {
+        //arguments es un array de todos los parámetros que recibe el callback en esta función
+        console.log(arguments);
+      })
+    }
 
   return layaout(el);
 }; 
