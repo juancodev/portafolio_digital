@@ -1,6 +1,11 @@
 const yo = require('yo-yo');
-
+//ESTA LIBRERÍA NOS PERMITE MODIFICAR LA HORA RELATIVA DESDE EL TIEMPO EN QUE SE PUBLICÓ
+/* const moment = require('moment'); */
+const IntlRelativeFormat = require('intl-relativeformat');
+/* const translate = require('../translate'); */
 //CONTINUAMOS CREANDO UN ARCHIVO INDEX EN DONDE COLOCAREMOS LA LÓGICA DE NUESTRO PROYECTO CON REFERENCIA A LAS IMÁGENES SUBIDAS
+
+let rf = new IntlRelativeFormat('es');
 
 //LUEGO CREAMOS UNA FUNCION QUE NOS PERMITA RENDERIZAR LA IMAGEN CADA VEZ HAYA CAMBIOS
 module.exports = function pictureCards(pic) { 
@@ -15,11 +20,11 @@ module.exports = function pictureCards(pic) {
         <img src="${picture.user.avatar}" class="avatar" />
         <span class="username">${picture.user.username}</span>
       </a>
-      <small class="rigth time">Hace un día</small>
+      <small class="right time">hace 1 día</small>
       <p>
         <a class="left" href="#" onclick=${like.bind(null, true)}><i class="far fa-star"></i></a>
         <a class="left" href="#" onclick=${like.bind(null, false)}><i class="fas fa-star"></i></a>
-        <span class="left likes">${picture.likes} favoritos</span>
+        <span class="left likes">${picture.likes} me gusta</span>
       </p>
     </div>
   </div>`;
