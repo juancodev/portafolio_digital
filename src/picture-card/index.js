@@ -40,7 +40,7 @@ module.exports = function pictureCards(pic) {
     //Y SE UTILIZA EL MÉTODO DE "yo.update()" COLOCANDO COMO PARÁMETRO EL ELEMENTO VIEJO Y EL NUEVO ELEMENTO ACTUALIZADO.
     yo.update(el, newEl);
     //ESTE RETURN ME PERMITE EVITAR QUE SE VUELVA A REPETIR LA MISMA SENTECIA
-    return false
+    return false;
   };
 
   el = render(pic);

@@ -57,7 +57,7 @@ aplication.get('/api/pictures', function (req, res){
     },
     url: 'https://materializecss.com/images/office.jpg',
     likes: 1,
-    liked: true,
+    liked: false,
     createAt: new Date()
   },
   ];

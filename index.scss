@@ -1,5 +1,8 @@
 //ACÁ LE ESTAMOS GENERANDO LA VARIABLE PARA QUE TODO LO COLOQUE CON COLORES SECUNDARIOS.
-$secondary-color: #0d47a1;
+$secondary-color: #010542;
+$primary-star: #1565c0;
+$secondary-star: #1976d2;
+
 
 //EN ESTA LÍNEA DE CÓDIGO ESTAMOS IMPORTANDO LA DEPENDECIA DE MATERIALIZE.
 @import "node_modules/materialize-css/sass/materialize.scss";
@@ -63,14 +66,23 @@ body {
 }
 
 .header {
-  background-color: rgb(14, 238, 171);
+  background-color: #66bb6ade;
   color: $secondary-color;
   box-shadow: none;
   border-bottom: 1px solid #edeeee;
-}
 
-.header .fas.fa-user-circle:hover{
-  color: #fafafa;
+  a:hover {
+  background-color: transparent;
+  }
+
+  .fas.fa-user-circle{
+    color:$secondary-color;
+    font-size: 30px;
+  }
+
+  .fas.fa-user-circle:hover {
+    color: #fafafa;
+  }
 }
 
 .timeline {
@@ -108,12 +120,12 @@ $avatar-size: 48px;
   font-size: 30px;
 }
 
-.card .far.fa-star {
-  color: $secondary-color;
+.card .fas.fa-star {
+  color: $primary-star;
 }
 
-.card .fas.fa-star {
-  color: #00838f;
+.card .far.fa-star {
+  color: $secondary-star;
   display: none;
 }
 
