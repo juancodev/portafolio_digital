@@ -3,7 +3,7 @@ const template = require('./template');
 const empty = require('empty-element');
 const title = require('title');
 const request = require('superagent');
-const header = require('../header')
+const header = require('../header');
 
 page('/', header, asyncLoad, function (ctx, next){
   title('Portafolio');

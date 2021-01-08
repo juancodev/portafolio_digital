@@ -14,5 +14,6 @@ moment.locale('es'); */
 require('./homepage');
 require('./signup');
 require('./signin');
+require('./profile');
 
 page();

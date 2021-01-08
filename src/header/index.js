@@ -20,7 +20,7 @@ let el = yo`<div>
       </div>
     </div>
   </div>
-  </nav>`
+  </nav>`;
 
 module.exports = function header(ctx, next){
   var container = document.getElementById('header-container')

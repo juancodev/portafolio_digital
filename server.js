@@ -31,11 +31,12 @@ aplication.get('/signup', (req, res)=>{
 
 aplication.get('/signin', (req, res)=>{
     res.render('index', { title : 'Portafolio - Signin'});
-})
+}) 
+
 //(FIXEAR EL PROBLEMA DE SINCRONIZACIÓN DE PAGE CON LA LIBRERIA TITLE)
 aplication.get('/api/pictures', function (req, res){
   /* EN ESTE CASO PONDREMOS UN OBJETO CON LOS DATOS, ICONOS Y USUARIO QUIEN SUBIÓ LA FOTO
- EN LA LÍNEA 21 CREAMOS UNA NUEVA INSTANCIA DE LA CLASE Date, EN DONDE SIGNIFICA 'new Date()' Hoy*/  
+ EN LA PROPIEDAD "creatAt" CREAMOS UNA NUEVA INSTANCIA DE LA CLASE Date, EN DONDE SIGNIFICA 'new Date()' Hoy*/  
   const pictures = [
   {
     user: {
@@ -75,6 +76,52 @@ aplication.post('/api/pictures', function (req, res) {
     res.send('Archivo subido correctamente');
   })
 })
+
+aplication.get('/api/user/:username', function (req, res){
+  const user = {
+    username: 'jmontilla',
+    avatar: 'https://i.pinimg.com/originals/d4/c1/e8/d4c1e8bbc2624a0ff0172e819dbf8c6b.jpg',
+    pictures: [
+      {
+        id: 1,
+        src: 'https://i.pinimg.com/originals/d4/c1/e8/d4c1e8bbc2624a0ff0172e819dbf8c6b.jpg',
+        likes: 12
+      },
+      {
+        id:2,
+        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/White_Pitbull.jpg/1200px-White_Pitbull.jpg',
+        likes: 11
+      },
+       {
+        id:3,
+        src: 'https://live.hsmob.io/storage/images/wakyma.com/wakyma.com_5-cosas-que-no-sabias-sobre-los-perros-pitbull.jpg',
+        likes: 10
+      },
+       {
+        id:4,
+        src: 'https://c.files.bbci.co.uk/48DD/production/_107435681_perro1.jpg',
+        likes: 13
+      },
+       {
+        id:5,
+        src: 'https://image.freepik.com/foto-gratis/lindo-perro-pequeno-sentado-comiendo-su-plato-comida-perros_139317-1570.jpg',
+        likes: 14
+      },
+       {
+        id:6,
+        src: 'https://www.caracteristicas.co/wp-content/uploads/2017/02/perro-3-e1561679226953.jpg',
+        likes: 15
+      },
+    ]
+  }
+  res.send(user);
+})
+
+aplication.get('/:username', (req, res)=>{
+    res.render('index', { title : `Portafolio - ${req.params.username}`});
+})
+
+
 
 /* CON ESA CONDICIÓN ESTAMOS INDICANDO QUE SI ERROR ES DIFERENTE A NULL ENTONCES LA APLICACIÓN ME RETORNE NADA DE LO CONTRARIO ME MUESTRE UN MENSAJE EN CONSOLA DICIENDO QUE HUBO UN ERROR, "process.exit(1)" NOS SIRVE PARA INDICAR QUE SI HAY UN ERROR DETENGA LA APLICACIÓN DE NO HABER SIEMPRE DEBE SER DISTINTO QUE "0". */
 
