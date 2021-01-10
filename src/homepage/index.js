@@ -5,38 +5,31 @@ const title = require('title');
 const request = require('superagent');
 const header = require('../header');
 
-page('/', header, asyncLoad, function (ctx, next){
+page('/', header, loading, asyncLoad, function (ctx, next){
   title('Portafolio');
   let main = document.getElementById('main-container');
 
   empty(main).appendChild(template(ctx.pictures));
 });
 
-/* function loadPicturesFetch (ctx, next){
-  request
-    .get('/api/pictures')
-    .end(function (err, res){
-    if (err) return console.log(err);
+/* 1: primero creamos una variable que almacena un elemento que crearemos con el método createElement(y adentro se le pasa la etiqueta html) dentro del DOM (document) 
 
-    ctx.pictures = res.body;
-    next();
-    })
+2: utilizamos el atributo ya creado (el) y le asignamos una nueva clase con la propiedad classList.add(nombre de la clase)
 
-} */
+3: debemos indicarle en dónde será agregado o inyectado el nuevo elemento con la nueva clase, en este caso, será en el main-container
 
-/* function loadPicturesFetch (ctx, next){
-  fetch('/api/pictures')
-    .then(function (res) {
-      return res.json();
-    })
-    .then(function (pictures){
-      ctx.pictures = pictures;
-      next();
-    })
-    .catch(function (err) {
-      console.log(err)
-    })
-} */
+4: por último, llamamos al método next() para que pueda obtener el request de las imagenes, ya que si no es agregada, se puede quedar el bucle y nunca llamar al siguiente middleware*/
+
+function loading (ctx, next) {
+  // 1
+  let el = document.createElement('div');
+  // 2
+  el.classList.add('loader');
+  // 3
+  document.getElementById('main-container').appendChild(el);
+  // 4
+  next();
+}
 
 async function asyncLoad(ctx, next){
   try {
@@ -47,3 +40,30 @@ async function asyncLoad(ctx, next){
   }
 }
 //await nos permite esperar hasta que las 2 promesas se cumplan como lo es fetch y then
+
+
+    /* function loadPicturesFetch (ctx, next){
+      request
+        .get('/api/pictures')
+        .end(function (err, res){
+        if (err) return console.log(err);
+    
+        ctx.pictures = res.body;
+        next();
+        })
+    
+    } */
+    
+    /* function loadPicturesFetch (ctx, next){
+      fetch('/api/pictures')
+        .then(function (res) {
+          return res.json();
+        })
+        .then(function (pictures){
+          ctx.pictures = pictures;
+          next();
+        })
+        .catch(function (err) {
+          console.log(err)
+        })
+    } */

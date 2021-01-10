@@ -1,13 +1,25 @@
 //ACÁ LE ESTAMOS GENERANDO LA VARIABLE PARA QUE TODO LO COLOQUE CON COLORES SECUNDARIOS.
 $secondary-color: #010542;
-$primary-star: #1565c0;
+$primary-star: #ffeb3b;
 $secondary-star: #1976d2;
 
 
-//EN ESTA LÍNEA DE CÓDIGO ESTAMOS IMPORTANDO LA DEPENDECIA DE MATERIALIZE.
+//EN ESTA LÍNEA DE CÓDIGO ESTAMOS IMPORTANDO LA DEPENDECIA DE MATERIALIZE Y OTRAS MÁS A UTILIZAR.
 @import "node_modules/materialize-css/sass/materialize.scss";
+@import "./loader";
 
-//ACÁ PEGAMOS TODO EL CSS QUE TENÍAMOS ANTES EN EL CÓDIGO.
+/*EN ESTE PASO, VEREMOS LOS PREFIJOS O CONDICIONES QUE SE LE ESTABLECEN AL NAVEGADOR PARA SU CONPATIBILIDAD, ES DECIR, QUE ALGUNOS ESTILOS NO SERÁN COMPATIBLES CON OTROS NAVEGADORES HASTA QUE SEA EXPECIFICADO. */
+@mixin prefix($property, $value, $vendors: webkit moz ms o) {
+  @if $vendors {
+    @each $vendor in $vendors {
+      #{"-" + $vendor + "-" + $property}: #{$value};
+    }
+  }
+  #{$property}: #{$value};
+}
+
+
+//ACÁ PEGAMOS TODO EL CSS QUE TENÍAMOS ANTES EN EL CÓDIGO Y SERÁ PROCESADO POR SASS CON LA AYUDA DE GULP.
 body {
   background: #fafafa;
   color: #010542;
@@ -66,7 +78,7 @@ body {
 }
 
 .header {
-  background-color: #66bb6ade;
+  background-color: #66bb6a;
   color: $secondary-color;
   box-shadow: none;
   border-bottom: 1px solid #edeeee;
@@ -117,31 +129,32 @@ $avatar-size: 48px;
 }
 
 .card i {
-  font-size: 30px;
+  font-size: 40px;
 }
 
-.card .fas.fa-star {
-  color: $primary-star;
-}
-
-.card .far.fa-star {
+.material-icons.blue100 {
   color: $secondary-star;
-  display: none;
 }
+
+.material-icons.yellow200 {
+ color: $primary-star;
+ display: none;
+ }
+
 
 //SASS NOS PERMITE CREAR SELECTORES PARA PODER COLOCARLOS UNOS DENTRO DE LOS OTROS
 .card.liked {
- .far.fa-star {
+ .material-icons.yellow200 {
    display: block;
   }
 
-  .fas.fa-star {
+  .material-icons.blue100 {
     display: none;
   }
 }
-//no muestra los iconos uno encima del otro.
 
 .form-upload {
+
   span, button {
     color: #fafafa
   }
@@ -162,6 +175,60 @@ $avatar-size: 48px;
       cursor: pointer;
       opacity: 0;
       filter: alpha(opacity = 0);
+    }
+  }
+}
+
+.profile {
+  margin-top: 30px;
+
+  .heading {
+    margin-bottom: 30px;
+  }
+
+  .picture-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    margin-bottom: 20px;
+    position: relative;
+
+    &:hover {
+      .picture {
+        @include prefix(filter, blur(1.5em) grayscale(100%));
+      }
+      
+      .likes {
+        display: flex;
+      }
+    }
+
+    .picture{
+      margin-bottom: 20px;
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .likes{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      color: $primary-star;
+      font-size: 34px;
+      display: none;
+    }
+
+    .material-icons.yellow100{
+      margin-right: 8px;
+      display: inline-block;
     }
   }
 }

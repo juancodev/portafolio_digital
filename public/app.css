@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .materialize-red {
   background-color: #e51c23 !important; }
 
@@ -6525,6 +6526,59 @@ input[type=range]::-ms-thumb {
     text-align: center;
     margin-top: 1.2rem; } }
 
+.loader {
+  margin: 100px auto;
+  font-size: 25px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-animation: load5 1.1s infinite ease;
+  animation: load5 1.1s infinite ease;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0); }
+
+@-webkit-keyframes load5 {
+  0%,
+  100% {
+    box-shadow: 0em -2.6em 0em 0em #66bb6a, 1.8em -1.8em 0 0em rgba(102, 187, 106, 0.2), 2.5em 0em 0 0em rgba(102, 187, 106, 0.2), 1.75em 1.75em 0 0em rgba(102, 187, 106, 0.2), 0em 2.5em 0 0em rgba(102, 187, 106, 0.2), -1.8em 1.8em 0 0em rgba(102, 187, 106, 0.2), -2.6em 0em 0 0em rgba(102, 187, 106, 0.5), -1.8em -1.8em 0 0em rgba(102, 187, 106, 0.7); }
+  12.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(102, 187, 106, 0.7), 1.8em -1.8em 0 0em #66bb6a, 2.5em 0em 0 0em rgba(102, 187, 106, 0.2), 1.75em 1.75em 0 0em rgba(102, 187, 106, 0.2), 0em 2.5em 0 0em rgba(102, 187, 106, 0.2), -1.8em 1.8em 0 0em rgba(102, 187, 106, 0.2), -2.6em 0em 0 0em rgba(102, 187, 106, 0.2), -1.8em -1.8em 0 0em rgba(102, 187, 106, 0.5); }
+  25% {
+    box-shadow: 0em -2.6em 0em 0em rgba(102, 187, 106, 0.5), 1.8em -1.8em 0 0em rgba(102, 187, 106, 0.7), 2.5em 0em 0 0em #66bb6a, 1.75em 1.75em 0 0em rgba(102, 187, 106, 0.2), 0em 2.5em 0 0em rgba(102, 187, 106, 0.2), -1.8em 1.8em 0 0em rgba(102, 187, 106, 0.2), -2.6em 0em 0 0em rgba(102, 187, 106, 0.2), -1.8em -1.8em 0 0em rgba(102, 187, 106, 0.2); }
+  37.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(102, 187, 106, 0.2), 1.8em -1.8em 0 0em rgba(102, 187, 106, 0.5), 2.5em 0em 0 0em rgba(102, 187, 106, 0.7), 1.75em 1.75em 0 0em #66bb6a, 0em 2.5em 0 0em rgba(102, 187, 106, 0.2), -1.8em 1.8em 0 0em rgba(102, 187, 106, 0.2), -2.6em 0em 0 0em rgba(102, 187, 106, 0.2), -1.8em -1.8em 0 0em rgba(102, 187, 106, 0.2); }
+  50% {
+    box-shadow: 0em -2.6em 0em 0em rgba(102, 187, 106, 0.2), 1.8em -1.8em 0 0em rgba(102, 187, 106, 0.2), 2.5em 0em 0 0em rgba(102, 187, 106, 0.5), 1.75em 1.75em 0 0em rgba(102, 187, 106, 0.7), 0em 2.5em 0 0em #66bb6a, -1.8em 1.8em 0 0em rgba(102, 187, 106, 0.2), -2.6em 0em 0 0em rgba(102, 187, 106, 0.2), -1.8em -1.8em 0 0em rgba(102, 187, 106, 0.2); }
+  62.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(102, 187, 106, 0.2), 1.8em -1.8em 0 0em rgba(102, 187, 106, 0.2), 2.5em 0em 0 0em rgba(102, 187, 106, 0.2), 1.75em 1.75em 0 0em rgba(102, 187, 106, 0.5), 0em 2.5em 0 0em rgba(102, 187, 106, 0.7), -1.8em 1.8em 0 0em #66bb6a, -2.6em 0em 0 0em rgba(102, 187, 106, 0.2), -1.8em -1.8em 0 0em rgba(102, 187, 106, 0.2); }
+  75% {
+    box-shadow: 0em -2.6em 0em 0em rgba(102, 187, 106, 0.2), 1.8em -1.8em 0 0em rgba(102, 187, 106, 0.2), 2.5em 0em 0 0em rgba(102, 187, 106, 0.2), 1.75em 1.75em 0 0em rgba(102, 187, 106, 0.2), 0em 2.5em 0 0em rgba(102, 187, 106, 0.5), -1.8em 1.8em 0 0em rgba(102, 187, 106, 0.7), -2.6em 0em 0 0em #66bb6a, -1.8em -1.8em 0 0em rgba(102, 187, 106, 0.2); }
+  87.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(102, 187, 106, 0.2), 1.8em -1.8em 0 0em rgba(102, 187, 106, 0.2), 2.5em 0em 0 0em rgba(102, 187, 106, 0.2), 1.75em 1.75em 0 0em rgba(102, 187, 106, 0.2), 0em 2.5em 0 0em rgba(102, 187, 106, 0.2), -1.8em 1.8em 0 0em rgba(102, 187, 106, 0.5), -2.6em 0em 0 0em rgba(102, 187, 106, 0.7), -1.8em -1.8em 0 0em #66bb6a; } }
+
+@keyframes load5 {
+  0%,
+  100% {
+    box-shadow: 0em -2.6em 0em 0em #66bb6a, 1.8em -1.8em 0 0em rgba(102, 187, 106, 0.2), 2.5em 0em 0 0em rgba(102, 187, 106, 0.2), 1.75em 1.75em 0 0em rgba(102, 187, 106, 0.2), 0em 2.5em 0 0em rgba(102, 187, 106, 0.2), -1.8em 1.8em 0 0em rgba(102, 187, 106, 0.2), -2.6em 0em 0 0em rgba(102, 187, 106, 0.5), -1.8em -1.8em 0 0em rgba(102, 187, 106, 0.7); }
+  12.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(102, 187, 106, 0.7), 1.8em -1.8em 0 0em #66bb6a, 2.5em 0em 0 0em rgba(102, 187, 106, 0.2), 1.75em 1.75em 0 0em rgba(102, 187, 106, 0.2), 0em 2.5em 0 0em rgba(102, 187, 106, 0.2), -1.8em 1.8em 0 0em rgba(102, 187, 106, 0.2), -2.6em 0em 0 0em rgba(102, 187, 106, 0.2), -1.8em -1.8em 0 0em rgba(102, 187, 106, 0.5); }
+  25% {
+    box-shadow: 0em -2.6em 0em 0em rgba(102, 187, 106, 0.5), 1.8em -1.8em 0 0em rgba(102, 187, 106, 0.7), 2.5em 0em 0 0em #66bb6a, 1.75em 1.75em 0 0em rgba(102, 187, 106, 0.2), 0em 2.5em 0 0em rgba(102, 187, 106, 0.2), -1.8em 1.8em 0 0em rgba(102, 187, 106, 0.2), -2.6em 0em 0 0em rgba(102, 187, 106, 0.2), -1.8em -1.8em 0 0em rgba(102, 187, 106, 0.2); }
+  37.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(102, 187, 106, 0.2), 1.8em -1.8em 0 0em rgba(102, 187, 106, 0.5), 2.5em 0em 0 0em rgba(102, 187, 106, 0.7), 1.75em 1.75em 0 0em #66bb6a, 0em 2.5em 0 0em rgba(102, 187, 106, 0.2), -1.8em 1.8em 0 0em rgba(102, 187, 106, 0.2), -2.6em 0em 0 0em rgba(102, 187, 106, 0.2), -1.8em -1.8em 0 0em rgba(102, 187, 106, 0.2); }
+  50% {
+    box-shadow: 0em -2.6em 0em 0em rgba(102, 187, 106, 0.2), 1.8em -1.8em 0 0em rgba(102, 187, 106, 0.2), 2.5em 0em 0 0em rgba(102, 187, 106, 0.5), 1.75em 1.75em 0 0em rgba(102, 187, 106, 0.7), 0em 2.5em 0 0em #66bb6a, -1.8em 1.8em 0 0em rgba(102, 187, 106, 0.2), -2.6em 0em 0 0em rgba(102, 187, 106, 0.2), -1.8em -1.8em 0 0em rgba(102, 187, 106, 0.2); }
+  62.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(102, 187, 106, 0.2), 1.8em -1.8em 0 0em rgba(102, 187, 106, 0.2), 2.5em 0em 0 0em rgba(102, 187, 106, 0.2), 1.75em 1.75em 0 0em rgba(102, 187, 106, 0.5), 0em 2.5em 0 0em rgba(102, 187, 106, 0.7), -1.8em 1.8em 0 0em #66bb6a, -2.6em 0em 0 0em rgba(102, 187, 106, 0.2), -1.8em -1.8em 0 0em rgba(102, 187, 106, 0.2); }
+  75% {
+    box-shadow: 0em -2.6em 0em 0em rgba(102, 187, 106, 0.2), 1.8em -1.8em 0 0em rgba(102, 187, 106, 0.2), 2.5em 0em 0 0em rgba(102, 187, 106, 0.2), 1.75em 1.75em 0 0em rgba(102, 187, 106, 0.2), 0em 2.5em 0 0em rgba(102, 187, 106, 0.5), -1.8em 1.8em 0 0em rgba(102, 187, 106, 0.7), -2.6em 0em 0 0em #66bb6a, -1.8em -1.8em 0 0em rgba(102, 187, 106, 0.2); }
+  87.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(102, 187, 106, 0.2), 1.8em -1.8em 0 0em rgba(102, 187, 106, 0.2), 2.5em 0em 0 0em rgba(102, 187, 106, 0.2), 1.75em 1.75em 0 0em rgba(102, 187, 106, 0.2), 0em 2.5em 0 0em rgba(102, 187, 106, 0.2), -1.8em 1.8em 0 0em rgba(102, 187, 106, 0.5), -2.6em 0em 0 0em rgba(102, 187, 106, 0.7), -1.8em -1.8em 0 0em #66bb6a; } }
+
+/*EN ESTE PASO, VEREMOS LOS PREFIJOS O CONDICIONES QUE SE LE ESTABLECEN AL NAVEGADOR PARA SU CONPATIBILIDAD, ES DECIR, QUE ALGUNOS ESTILOS NO SERÁN COMPATIBLES CON OTROS NAVEGADORES HASTA QUE SEA EXPECIFICADO. */
 body {
   background: #fafafa;
   color: #010542;
@@ -6572,7 +6626,7 @@ body {
   background-color: #12e33b; }
 
 .header {
-  background-color: #66bb6ade;
+  background-color: #66bb6a;
   color: #010542;
   box-shadow: none;
   border-bottom: 1px solid #edeeee; }
@@ -6608,19 +6662,19 @@ body {
   margin-left: 12px; }
 
 .card i {
-  font-size: 30px; }
+  font-size: 40px; }
 
-.card .fas.fa-star {
-  color: #1565c0; }
+.material-icons.blue100 {
+  color: #1976d2; }
 
-.card .far.fa-star {
-  color: #1976d2;
+.material-icons.yellow200 {
+  color: #ffeb3b;
   display: none; }
 
-.card.liked .far.fa-star {
+.card.liked .material-icons.yellow200 {
   display: block; }
 
-.card.liked .fas.fa-star {
+.card.liked .material-icons.blue100 {
   display: none; }
 
 .form-upload span, .form-upload button {
@@ -6641,3 +6695,44 @@ body {
     cursor: pointer;
     opacity: 0;
     filter: alpha(opacity=0); }
+
+.profile {
+  margin-top: 30px; }
+  .profile .heading {
+    margin-bottom: 30px; }
+  .profile .picture-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    margin-bottom: 20px;
+    position: relative; }
+    .profile .picture-container:hover .picture {
+      -webkit-filter: blur(1.5em) grayscale(100%);
+      -moz-filter: blur(1.5em) grayscale(100%);
+      -ms-filter: blur(1.5em) grayscale(100%);
+      -o-filter: blur(1.5em) grayscale(100%);
+      filter: blur(1.5em) grayscale(100%); }
+    .profile .picture-container:hover .likes {
+      display: flex; }
+    .profile .picture-container .picture {
+      margin-bottom: 20px;
+      display: block;
+      max-width: 100%;
+      max-height: 100%; }
+    .profile .picture-container .likes {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      color: #ffeb3b;
+      font-size: 34px;
+      display: none; }
+    .profile .picture-container .material-icons.yellow100 {
+      margin-right: 8px;
+      display: inline-block; }

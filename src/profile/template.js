@@ -3,7 +3,7 @@ const yo = require('yo-yo');
 const layout = require('../layout');
 
 module.exports = function userPageTemplate(user){
-  let el = yo `<div class="cointainer user-page">
+  let el = yo `<div class="cointainer profile">
     <div class="row">
       <div class="col s12 m10 offset m1-l8 offset-l2 center-align heading">
         <div class="row">
