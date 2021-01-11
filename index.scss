@@ -1,6 +1,6 @@
 //ACÁ LE ESTAMOS GENERANDO LA VARIABLE PARA QUE TODO LO COLOQUE CON COLORES SECUNDARIOS.
 $secondary-color: #010542;
-$primary-star: #ffeb3b;
+$primary-star: #66bb6a;
 $secondary-star: #1976d2;
 
 
@@ -136,7 +136,7 @@ $avatar-size: 48px;
   color: $secondary-star;
 }
 
-.material-icons.yellow200 {
+.material-icons.green200 {
  color: $primary-star;
  display: none;
  }
@@ -144,7 +144,7 @@ $avatar-size: 48px;
 
 //SASS NOS PERMITE CREAR SELECTORES PARA PODER COLOCARLOS UNOS DENTRO DE LOS OTROS
 .card.liked {
- .material-icons.yellow200 {
+ .material-icons.green200 {
    display: block;
   }
 
@@ -226,9 +226,14 @@ $avatar-size: 48px;
       display: none;
     }
 
-    .material-icons.yellow100{
+    .material-icons.green200{
       margin-right: 8px;
-      display: inline-block;
+      display: flex;
+      font-size: 40px;
+    }
+    
+    a {
+      color: #fafafa;
     }
   }
 }

@@ -6667,11 +6667,11 @@ body {
 .material-icons.blue100 {
   color: #1976d2; }
 
-.material-icons.yellow200 {
-  color: #ffeb3b;
+.material-icons.green200 {
+  color: #66bb6a;
   display: none; }
 
-.card.liked .material-icons.yellow200 {
+.card.liked .material-icons.green200 {
   display: block; }
 
 .card.liked .material-icons.blue100 {
@@ -6730,9 +6730,12 @@ body {
       display: none;
       justify-content: center;
       align-items: center;
-      color: #ffeb3b;
+      color: #66bb6a;
       font-size: 34px;
       display: none; }
-    .profile .picture-container .material-icons.yellow100 {
+    .profile .picture-container .material-icons.green200 {
       margin-right: 8px;
-      display: inline-block; }
+      display: flex;
+      font-size: 40px; }
+    .profile .picture-container a {
+      color: #fafafa; }

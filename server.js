@@ -31,7 +31,7 @@ aplication.get('/signup', (req, res)=>{
 
 aplication.get('/signin', (req, res)=>{
     res.render('index', { title : 'Portafolio - Signin'});
-}) 
+}) ;
 
 //(FIXEAR EL PROBLEMA DE SINCRONIZACIÓN DE PAGE CON LA LIBRERIA TITLE)
 aplication.get('/api/pictures', function (req, res){
@@ -44,7 +44,7 @@ aplication.get('/api/pictures', function (req, res){
       avatar: 'fotoperfil.jpg'
     },
     url: 'https://materializecss.com/images/office.jpg',
-    likes: 10,
+    likes: 0,
     liked: false,
     createAt: new Date() 
   },
@@ -57,7 +57,7 @@ aplication.get('/api/pictures', function (req, res){
       avatar: 'fotoperfil.jpg'
     },
     url: 'https://materializecss.com/images/office.jpg',
-    likes: 1,
+    likes: 0,
     liked: false,
     createAt: new Date()
   },
@@ -66,7 +66,7 @@ aplication.get('/api/pictures', function (req, res){
   setTimeout(function () {
   res.send(pictures);
   }, 2000);
-})
+});
 
 aplication.post('/api/pictures', function (req, res) {
   upload(req, res, function (err){
@@ -75,7 +75,7 @@ aplication.post('/api/pictures', function (req, res) {
     }
     res.send('Archivo subido correctamente');
   })
-})
+});
 
 aplication.get('/api/user/:username', function (req, res){
   const user = {
@@ -115,12 +115,17 @@ aplication.get('/api/user/:username', function (req, res){
     ]
   }
   res.send(user);
-})
+});
 
+//RUTA PARA EL USUARIO
 aplication.get('/:username', (req, res)=>{
     res.render('index', { title : `Portafolio - ${req.params.username}`});
-})
+});
 
+//RUTA PARA LAS FOTOS DE LOS USUARIOS
+aplication.get('/:username/:id', (req, res)=>{
+    res.render('index', { title : `Portafolio - ${req.params.username}`});
+});
 
 
 /* CON ESA CONDICIÓN ESTAMOS INDICANDO QUE SI ERROR ES DIFERENTE A NULL ENTONCES LA APLICACIÓN ME RETORNE NADA DE LO CONTRARIO ME MUESTRE UN MENSAJE EN CONSOLA DICIENDO QUE HUBO UN ERROR, "process.exit(1)" NOS SIRVE PARA INDICAR QUE SI HAY UN ERROR DETENGA LA APLICACIÓN DE NO HABER SIEMPRE DEBE SER DISTINTO QUE "0". */

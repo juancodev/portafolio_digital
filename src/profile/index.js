@@ -8,8 +8,14 @@ const header = require('../header');
 page('/:username', header, loadUser , function (ctx, next){
   title(`Portafolio - ${ctx.params.username}`);
   let main = document.getElementById('main-container');
-
   empty(main).appendChild(template(ctx.user));
+})
+
+page('/:username/:id', header, loadUser , function (ctx, next){
+  title(`Portafolio - ${ctx.params.username}`);
+  let main = document.getElementById('main-container');
+  empty(main).appendChild(template(ctx.user));
+  //AGREGAR SEGUNDA SOLUCIÓN A LAS IMAGENES MINUTO 32:45
 })
 
 async function loadUser (ctx, next){

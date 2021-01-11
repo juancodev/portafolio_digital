@@ -23,7 +23,7 @@ module.exports = function pictureCards(pic) {
       <small class="right time">hace 1 día</small>
       <p>
         <a class="left" href="#" onclick=${like.bind(null, true)}><i class="material-icons blue100">star_border</i></a>
-        <a class="left" href="#" onclick=${like.bind(null, false)}><i class="material-icons yellow200">star</i></a>
+        <a class="left" href="#" onclick=${like.bind(null, false)}><i class="material-icons green200">star</i></a>
         <span class="left likes">${picture.likes} me gusta</span>
       </p>
     </div>
