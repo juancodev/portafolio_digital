@@ -13,7 +13,8 @@ module.exports = function pictureCards(pic) {
   function render(picture) {
     return yo`<div class="card ${picture.liked ? 'liked' : ''}">
     <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" src="${picture.url}">
+      <img class="activator" src="${picture.url}" ondblclick=${like.bind(null, null, true)} />
+      <i class="fas fa-award like-award ${picture.likedAward ? 'liked' : ''}"></i>
     </div>
     <div class="card-content">
       <a href="/${picture.user.username}" class="card-title">
@@ -30,15 +31,34 @@ module.exports = function pictureCards(pic) {
   </div>`;
   };
 
-  function like(liked) {
-    //SE TOMA EL ARRAYS Y SE LE AGREGA LA PROPIEDAD.
-    pic.liked = liked;
+  function like(liked, dblclick) {
+    //SE VA A EVALUAR LA CONDICION SI TIENE EL LIKE QUITARLO Y SI NO LO TIENE, AGREGARLO CON EL DBLCLICK
+    //SE TIENE QUE AGREGAR UN DOBLE ASIGNACION PARA LA CONDICION Y QUE ASI LO MUESTRE SI NO LO TIENE O VICEVERSA
+      if (dblclick) {
+        pic.likedAward = pic.liked = !pic.liked;
+        liked = pic.liked;
+      } else {
+        //SE TOMA EL ARRAYS Y SE LE AGREGA LA PROPIEDAD.
+        pic.liked = liked;
+      }
     //SE LE INDICA A EL OBJETO CON SU PROPIEDAD pic.likes LA SUMA O LA RESTA
     pic.likes += liked ? 1 : -1;
-    //SE CREA LA NUEVA VARIABLE QUE SE VA A ENCARGAR DE GUARDAR LOS NUEVOS CAMBIOS
-    let newEl= render(pic);
-    //Y SE UTILIZA EL MÉTODO DE "yo.update()" COLOCANDO COMO PARÁMETRO EL ELEMENTO VIEJO Y EL NUEVO ELEMENTO ACTUALIZADO.
-    yo.update(el, newEl);
+
+    //SE CREA UNA NUEVA FUNCION QUE SE VA A ENCARGAR DE GUARDAR LOS NUEVOS CAMBIOS
+    function doRender() {
+      let newEl= render(pic);
+      //Y SE UTILIZA EL MÉTODO DE "yo.update()" COLOCANDO COMO PARÁMETRO EL ELEMENTO VIEJO Y EL NUEVO ELEMENTO ACTUALIZADO.
+      yo.update(el, newEl);
+    }
+    //SE INICIALIZA LA FUNCION
+    doRender()
+
+    //LUEGO SE CREA UN TIEMPO DE INTERVALO PARA PODER QUITAR EL ESTILO DEL AWARD
+    setTimeout(function (){
+      pic.likedAward = false
+      doRender()
+    }, 1500);
+    
     //ESTE RETURN ME PERMITE EVITAR QUE SE VUELVA A REPETIR LA MISMA SENTECIA
     return false;
   };

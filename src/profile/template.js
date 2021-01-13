@@ -19,22 +19,8 @@ module.exports = function userPageTemplate(user){
       <div class="row">
         ${user.pictures.map(function (picture){
           return yo` <div class="col s12 m6 l4">
-            <a href="/${user.username}/${picture.id}" class="picture-container">
-              <img src="${picture.src}" class="picture" />
-              <div class="likes"><a href="#!"><i class="material-icons green200">star</i>${picture.likes}</a>
-              </div> 
-            </a>
-            <div id="modal${picture.id}" class="modal modal-fixed-footer">
-              <div class="modal-content">
-                <img src="${picture.src}" />
-              </div>
-              <div class="modal-footer">
-                <div class="btn btn-flat likes">
-                  <i class="fas fa-star"></i> ${picture.likes} ME GUSTA
-                </div>
-                <div class="btn btn-flat">
-                </div>
-              </div>
+            <div class="picture-container">
+              <img src="${picture.src}" class="picture materialboxed" data-caption=" ${picture.likes} ME GUSTA" />
             </div>
           </div>`
         })}
@@ -43,3 +29,25 @@ module.exports = function userPageTemplate(user){
   </div>`;
   return layout(el);
 }
+
+
+/*<a href="/${user.username}/${picture.id}" class="picture-container">
+    <img src="${picture.src}" class="picture" />
+    <div class="likes"><a href="#!"><i class="material-icons green200">star</i>${picture.likes}</a>
+    </div> 
+  </a> 
+
+
+  <div class="modal-footer">
+    <div class="btn btn-flat likes">
+      <i class="fas fa-star"></i> ${picture.likes} ME GUSTA
+    </div>
+    <div class="btn btn-flat">
+    </div>
+  </div> 
+              
+              
+              
+  <div class="media">
+  <img src="${picture.src}" class="materialboxed" data-caption=" ${picture.likes} ME GUSTA"/>
+  </div>*/
