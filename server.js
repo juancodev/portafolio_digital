@@ -80,36 +80,36 @@ aplication.post('/api/pictures', function (req, res) {
 aplication.get('/api/user/:username', function (req, res){
   const user = {
     username: 'jmontilla',
-    avatar: 'https://i.pinimg.com/originals/d4/c1/e8/d4c1e8bbc2624a0ff0172e819dbf8c6b.jpg',
+    avatar: 'fotoperfil.jpg',
     pictures: [
       {
         id: 1,
-        src: 'https://i.pinimg.com/originals/d4/c1/e8/d4c1e8bbc2624a0ff0172e819dbf8c6b.jpg',
+        src: 'servicio_comunitario.jpg',
         likes: 12
       },
       {
         id:2,
-        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/White_Pitbull.jpg/1200px-White_Pitbull.jpg',
+        src: 'servicio_comunitario_2.jpg',
         likes: 11
       },
        {
         id:3,
-        src: 'https://live.hsmob.io/storage/images/wakyma.com/wakyma.com_5-cosas-que-no-sabias-sobre-los-perros-pitbull.jpg',
+        src: 'muestra_trabajo.jpg',
         likes: 10
       },
        {
         id:4,
-        src: 'https://c.files.bbci.co.uk/48DD/production/_107435681_perro1.jpg',
+        src: 'muestra_trabajo_2.jpg',
         likes: 13
       },
        {
         id:5,
-        src: 'https://image.freepik.com/foto-gratis/lindo-perro-pequeno-sentado-comiendo-su-plato-comida-perros_139317-1570.jpg',
+        src: 'muestra_trabajo_3.jpg',
         likes: 14
       },
        {
         id:6,
-        src: 'https://www.caracteristicas.co/wp-content/uploads/2017/02/perro-3-e1561679226953.jpg',
+        src: 'muestra_trabajo_4.jpg',
         likes: 15
       },
     ]
