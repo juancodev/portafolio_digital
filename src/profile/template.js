@@ -28,14 +28,6 @@ module.exports = function userPageTemplate(user){
               <div class="modal-content">
                 <img src="${picture.src}" />
               </div>
-              <div class="modal-footer">
-                <div class="btn btn-flat likes">
-                  <i class="fas fa-star"></i> ${picture.likes} ME GUSTA
-                </div>
-                <div class="btn btn-flat">
-                </div>
-              </div>
-            </div>
           </div>`
         })}
       </div>
