@@ -1,0 +1,20 @@
+2021-01-16T18:51:06.798403127 0.240370s notice: Recursively removing directory /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/tmp
+2021-01-16T18:51:06.853339117 0.295309s notice: Initializing directory /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data
+2021-01-16T18:51:06.863238942 0.305206s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data' did not already exist or is empty.)
+2021-01-16T18:51:06.863354867 0.305320s notice: Running rethinkdb 2.4.1~0focal (CLANG 10.0.0 )...
+2021-01-16T18:51:06.866973470 0.308940s notice: Running on Linux 5.8.0-38-generic x86_64
+2021-01-16T18:51:06.867045221 0.309011s notice: Loading data from directory /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data
+2021-01-16T18:51:07.306115547 0.748082s info: Automatically using cache size of 381 MB
+2021-01-16T18:51:07.371588772 0.813554s notice: Listening for intracluster connections on port 29015
+2021-01-16T18:51:07.433083530 0.875049s notice: Listening for client driver connections on port 28015
+2021-01-16T18:51:07.433156204 0.875122s notice: Listening for administrative HTTP connections on port 8080
+2021-01-16T18:51:07.433163642 0.875129s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2021-01-16T18:51:07.433169502 0.875135s notice: Listening on driver addresses: 127.0.0.1, ::1
+2021-01-16T18:51:07.433174529 0.875140s notice: Listening on http addresses: 127.0.0.1, ::1
+2021-01-16T18:51:07.433179694 0.875145s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2021-01-16T18:51:07.433186338 0.875152s notice: Server ready, "jmontilla_VIT_P2402_hcl" d388d192-f361-46fa-8802-03e15a047a0a
+2021-01-16T18:53:40.132763311 153.574729s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2021-01-16T18:53:40.133196397 153.575162s notice: Shutting down client connections...
+2021-01-16T18:53:40.133324498 153.575290s notice: All client connections closed.
+2021-01-16T18:53:40.133337550 153.575303s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2021-01-16T18:53:40.177456554 153.619422s notice: Storage engine shut down.

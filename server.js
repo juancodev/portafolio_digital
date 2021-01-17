@@ -130,7 +130,7 @@ aplication.get('/:username/:id', (req, res)=>{
 
 /* CON ESA CONDICIÓN ESTAMOS INDICANDO QUE SI ERROR ES DIFERENTE A NULL ENTONCES LA APLICACIÓN ME RETORNE NADA DE LO CONTRARIO ME MUESTRE UN MENSAJE EN CONSOLA DICIENDO QUE HUBO UN ERROR, "process.exit(1)" NOS SIRVE PARA INDICAR QUE SI HAY UN ERROR DETENGA LA APLICACIÓN DE NO HABER SIEMPRE DEBE SER DISTINTO QUE "0". */
 
-aplication.listen(8080, (err)=>{
+aplication.listen(3000, (err)=>{
     if (err != null)
     return console.log('Hubo un error con el servidor'), process.exit(1);
     else 
