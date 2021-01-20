@@ -84,7 +84,7 @@ aplication.get('/api/user/:username', function (req, res){
     pictures: [
       {
         id: 1,
-        src: 'servicio_comunitario.jpg',
+        src: 'certificado.png',
         likes: 12
       },
       {
