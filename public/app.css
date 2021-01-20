@@ -6706,15 +6706,17 @@ body {
     justify-content: center;
     height: 400px;
     margin-bottom: 20px;
-    position: relative; }
-    .profile .picture-container:hover .picture {
-      -webkit-filter: blur(1.5em) grayscale(100%);
-      -moz-filter: blur(1.5em) grayscale(100%);
-      -ms-filter: blur(1.5em) grayscale(100%);
-      -o-filter: blur(1.5em) grayscale(100%);
-      filter: blur(1.5em) grayscale(100%); }
-    .profile .picture-container:hover .likes {
-      display: flex; }
+    position: relative;
+    /*     &:hover {
+        .picture {
+          @include prefix(filter, blur(1.5em) grayscale(100%));
+        }
+        
+        .likes {
+          display: flex;
+        }
+      }
+  */ }
     .profile .picture-container .picture {
       margin-bottom: 20px;
       display: block;
@@ -6739,3 +6741,20 @@ body {
       font-size: 40px; }
     .profile .picture-container a {
       color: #fafafa; }
+
+.like-award {
+  font-size: 10em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fafafa;
+  transition: all .1s ease;
+  opacity: 0; }
+
+.like-award.liked {
+  color: #66bb6a;
+  font-size: 12em;
+  display: block;
+  transition: all .5s ease;
+  opacity: 1; }
