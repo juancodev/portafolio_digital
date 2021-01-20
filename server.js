@@ -91,8 +91,12 @@ aplication.get('/api/user/:username', function (req, res){
     pictures: [
       {
         id: 1,
+<<<<<<< HEAD
         src: 'servicio_comunitario.jpg',
 >>>>>>> a38ec0d5231cb643c74684b277e9df43596782d2
+=======
+        src: 'certificado.png',
+>>>>>>> bc8bbe3a0001849ed239db8a48dfb48be2cc248f
         likes: 12
       },
       {
@@ -138,7 +142,7 @@ aplication.get('/:username/:id', (req, res)=>{
 
 /* CON ESA CONDICIÓN ESTAMOS INDICANDO QUE SI ERROR ES DIFERENTE A NULL ENTONCES LA APLICACIÓN ME RETORNE NADA DE LO CONTRARIO ME MUESTRE UN MENSAJE EN CONSOLA DICIENDO QUE HUBO UN ERROR, "process.exit(1)" NOS SIRVE PARA INDICAR QUE SI HAY UN ERROR DETENGA LA APLICACIÓN DE NO HABER SIEMPRE DEBE SER DISTINTO QUE "0". */
 
-aplication.listen(8080, (err)=>{
+aplication.listen(3000, (err)=>{
     if (err != null)
     return console.log('Hubo un error con el servidor'), process.exit(1);
     else 
