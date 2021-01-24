@@ -14,15 +14,21 @@
     "empty-element": "^1.0.0",
     "express": "^4.17.1",
     "file-extension": "^4.0.5",
+    "fs-extra": "^9.1.0",
     "intl": "^1.2.5",
     "intl-messageformat": "^9.3.20",
     "intl-relativeformat": "^6.4.3",
     "materialize-css": "^1.0.0",
+    "mongoose": "^5.11.13",
+    "morgan": "^1.10.0",
     "multer": "^1.4.2",
+    "nodemon": "^2.0.7",
     "page": "^1.11.6",
     "pug": "^3.0.0",
     "superagent": "^6.1.0",
+    "timeago.js": "^4.0.2",
     "title": "^3.4.2",
+    "uuid": "^8.3.2",
     "yo-yo": "^1.4.1"
   },
   "devDependencies": {
@@ -41,6 +47,6 @@
   },
   "scripts": {
     "build": "gulp",
-    "start": "gulp watch & node server.js"
+    "start": "gulp watch & nodemon server.js"
   }
 }
