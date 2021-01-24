@@ -19,21 +19,9 @@ module.exports = function userPageTemplate(user){
       <div class="row">
         ${user.pictures.map(function (picture){
           return yo` <div class="col s12 m6 l4">
-<<<<<<< HEAD
-            <a href="/${user.username}/${picture.id}" class="picture-container">
-              <img src="${picture.src}" class="picture" />
-              <div class="likes"><a href="#!"><i class="material-icons green200">star</i>${picture.likes}</a>
-              </div> 
-            </a>
-            <div id="modal${picture.id}" class="modal modal-fixed-footer">
-              <div class="modal-content">
-                <img src="${picture.src}" />
-              </div>
-=======
             <div class="picture-container">
               <img src="${picture.src}" class="picture materialboxed" data-caption=" ${picture.likes} ME GUSTA" />
             </div>
->>>>>>> a38ec0d5231cb643c74684b277e9df43596782d2
           </div>`
         })}
       </div>

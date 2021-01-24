@@ -80,23 +80,11 @@ aplication.post('/api/pictures', function (req, res) {
 aplication.get('/api/user/:username', function (req, res){
   const user = {
     username: 'jmontilla',
-<<<<<<< HEAD
-    avatar: 'https://www.petclic.es/wikipets/wp-content/uploads/2013/04/pitbull-1.jpg',
-    pictures: [
-      {
-        id: 1,
-        src: 'https://www.petclic.es/wikipets/wp-content/uploads/2013/04/pitbull-1.jpg',
-=======
     avatar: 'fotoperfil.jpg',
     pictures: [
       {
         id: 1,
-<<<<<<< HEAD
-        src: 'servicio_comunitario.jpg',
->>>>>>> a38ec0d5231cb643c74684b277e9df43596782d2
-=======
         src: 'certificado.png',
->>>>>>> bc8bbe3a0001849ed239db8a48dfb48be2cc248f
         likes: 12
       },
       {
