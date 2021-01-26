@@ -18,3 +18,170 @@
 2021-01-16T18:53:40.133324498 153.575290s notice: All client connections closed.
 2021-01-16T18:53:40.133337550 153.575303s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
 2021-01-16T18:53:40.177456554 153.619422s notice: Storage engine shut down.
+2021-01-24T15:55:15.934947360 0.214898s notice: Running rethinkdb 2.4.1~0focal (CLANG 10.0.0 )...
+2021-01-24T15:55:15.992774032 0.272720s notice: Running on Linux 5.8.0-40-generic x86_64
+2021-01-24T15:55:15.992926966 0.272871s notice: Loading data from directory /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data
+2021-01-24T15:55:16.269551824 0.549495s info: Automatically using cache size of 471 MB
+2021-01-24T15:55:16.311266202 0.591210s notice: Listening for intracluster connections on port 29015
+2021-01-24T15:55:16.373062374 0.653006s notice: Listening for client driver connections on port 28015
+2021-01-24T15:55:16.373231525 0.653175s notice: Listening for administrative HTTP connections on port 8080
+2021-01-24T15:55:16.373293380 0.653237s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2021-01-24T15:55:16.373301816 0.653245s notice: Listening on driver addresses: 127.0.0.1, ::1
+2021-01-24T15:55:16.373317973 0.653261s notice: Listening on http addresses: 127.0.0.1, ::1
+2021-01-24T15:55:16.373330295 0.653274s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2021-01-24T15:55:16.373375792 0.653319s notice: Server ready, "jmontilla_VIT_P2402_hcl" d388d192-f361-46fa-8802-03e15a047a0a
+2021-01-24T15:55:37.412002689 21.691946s info: Table 71e4ccc4-e462-4e2d-beff-81da7cce5b13: Starting a new Raft election for term 1.
+2021-01-24T15:55:37.412337217 21.692281s info: Table 71e4ccc4-e462-4e2d-beff-81da7cce5b13: Added replica on this server.
+2021-01-24T15:55:37.547337772 21.827282s info: Table 71e4ccc4-e462-4e2d-beff-81da7cce5b13: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-24T15:55:39.485649125 23.765593s info: Table 314f33fd-74b8-44f3-b120-83ad0d14655f: Starting a new Raft election for term 1.
+2021-01-24T15:55:39.486117127 23.766061s info: Table 314f33fd-74b8-44f3-b120-83ad0d14655f: Added replica on this server.
+2021-01-24T15:55:39.547807443 23.827751s info: Table 314f33fd-74b8-44f3-b120-83ad0d14655f: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-24T15:55:40.957061590 25.237005s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/314f33fd-74b8-44f3-b120-83ad0d14655f
+2021-01-24T15:55:40.957070252 25.237014s info: Table 314f33fd-74b8-44f3-b120-83ad0d14655f: Deleted the table.
+2021-01-24T15:55:41.027812118 25.307756s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/71e4ccc4-e462-4e2d-beff-81da7cce5b13
+2021-01-24T15:55:41.027818360 25.307762s info: Table 71e4ccc4-e462-4e2d-beff-81da7cce5b13: Deleted the table.
+2021-01-24T16:27:59.754193581 1964.034138s info: Table cb8bb417-bc44-4a46-b68a-54bf0f9ec2cc: Starting a new Raft election for term 1.
+2021-01-24T16:27:59.754524122 1964.034468s info: Table cb8bb417-bc44-4a46-b68a-54bf0f9ec2cc: Added replica on this server.
+2021-01-24T16:27:59.799238450 1964.079182s info: Table cb8bb417-bc44-4a46-b68a-54bf0f9ec2cc: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-24T16:28:01.616455734 1965.896399s info: Table 6864c1bd-5076-4d30-9dfe-4d85ce0c3980: Starting a new Raft election for term 1.
+2021-01-24T16:28:01.616598077 1965.896543s info: Table 6864c1bd-5076-4d30-9dfe-4d85ce0c3980: Added replica on this server.
+2021-01-24T16:28:01.676778389 1965.956722s info: Table 6864c1bd-5076-4d30-9dfe-4d85ce0c3980: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-24T16:28:03.074020768 1967.353964s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/6864c1bd-5076-4d30-9dfe-4d85ce0c3980
+2021-01-24T16:28:03.074028152 1967.353971s info: Table 6864c1bd-5076-4d30-9dfe-4d85ce0c3980: Deleted the table.
+2021-01-24T16:28:03.112118161 1967.392062s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/cb8bb417-bc44-4a46-b68a-54bf0f9ec2cc
+2021-01-24T16:28:03.112130699 1967.392074s info: Table cb8bb417-bc44-4a46-b68a-54bf0f9ec2cc: Deleted the table.
+2021-01-24T16:58:57.471320852 3821.751265s info: Table 86c9b473-4401-414b-8f18-7ea9b055dde8: Added replica on this server.
+2021-01-24T16:58:57.471406969 3821.751350s info: Table 86c9b473-4401-414b-8f18-7ea9b055dde8: Starting a new Raft election for term 1.
+2021-01-24T16:58:57.529391185 3821.809335s info: Table 86c9b473-4401-414b-8f18-7ea9b055dde8: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-24T16:59:00.168940846 3824.448885s info: Table a53ba1a5-5d97-4e9d-98fc-e5cfb2957f6e: Starting a new Raft election for term 1.
+2021-01-24T16:59:00.169279186 3824.449223s info: Table a53ba1a5-5d97-4e9d-98fc-e5cfb2957f6e: Added replica on this server.
+2021-01-24T16:59:00.229783299 3824.509727s info: Table a53ba1a5-5d97-4e9d-98fc-e5cfb2957f6e: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-24T16:59:01.671759466 3825.951703s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/86c9b473-4401-414b-8f18-7ea9b055dde8
+2021-01-24T16:59:01.671765855 3825.951709s info: Table 86c9b473-4401-414b-8f18-7ea9b055dde8: Deleted the table.
+2021-01-24T16:59:01.721500149 3826.001444s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/a53ba1a5-5d97-4e9d-98fc-e5cfb2957f6e
+2021-01-24T16:59:01.721508669 3826.001452s info: Table a53ba1a5-5d97-4e9d-98fc-e5cfb2957f6e: Deleted the table.
+2021-01-24T17:08:31.679836957 4395.959781s info: Table bb307931-75ed-4cc6-bf75-455201db418e: Starting a new Raft election for term 1.
+2021-01-24T17:08:31.680018174 4395.959962s info: Table bb307931-75ed-4cc6-bf75-455201db418e: Added replica on this server.
+2021-01-24T17:08:31.737531920 4396.017476s info: Table bb307931-75ed-4cc6-bf75-455201db418e: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-24T17:08:34.412961869 4398.692905s info: Table 8bd90dcf-4bbf-4f11-b6cc-d9a9731d5aa5: Starting a new Raft election for term 1.
+2021-01-24T17:08:34.413165681 4398.693109s info: Table 8bd90dcf-4bbf-4f11-b6cc-d9a9731d5aa5: Added replica on this server.
+2021-01-24T17:08:34.470821290 4398.750765s info: Table 8bd90dcf-4bbf-4f11-b6cc-d9a9731d5aa5: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-24T17:08:35.916217971 4400.196161s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/8bd90dcf-4bbf-4f11-b6cc-d9a9731d5aa5
+2021-01-24T17:08:35.916225075 4400.196168s info: Table 8bd90dcf-4bbf-4f11-b6cc-d9a9731d5aa5: Deleted the table.
+2021-01-24T17:08:35.973163089 4400.253107s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/bb307931-75ed-4cc6-bf75-455201db418e
+2021-01-24T17:08:35.973170261 4400.253113s info: Table bb307931-75ed-4cc6-bf75-455201db418e: Deleted the table.
+2021-01-24T17:26:06.982924279 5451.262868s info: Table 080280b1-b944-4835-a82a-fa027943b9a5: Added replica on this server.
+2021-01-24T17:26:06.982952747 5451.262896s info: Table 080280b1-b944-4835-a82a-fa027943b9a5: Starting a new Raft election for term 1.
+2021-01-24T17:26:07.038963793 5451.318908s info: Table 080280b1-b944-4835-a82a-fa027943b9a5: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-24T17:26:08.849204751 5453.129149s info: Table 8a5d0923-8f86-424b-86a6-58e5ba145fc9: Starting a new Raft election for term 1.
+2021-01-24T17:26:08.849749172 5453.129693s info: Table 8a5d0923-8f86-424b-86a6-58e5ba145fc9: Added replica on this server.
+2021-01-24T17:26:08.905927972 5453.185872s info: Table 8a5d0923-8f86-424b-86a6-58e5ba145fc9: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-24T17:26:10.396472953 5454.676417s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/080280b1-b944-4835-a82a-fa027943b9a5
+2021-01-24T17:26:10.396565736 5454.676509s info: Table 080280b1-b944-4835-a82a-fa027943b9a5: Deleted the table.
+2021-01-24T17:26:10.463909951 5454.743853s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/8a5d0923-8f86-424b-86a6-58e5ba145fc9
+2021-01-24T17:26:10.463918024 5454.743861s info: Table 8a5d0923-8f86-424b-86a6-58e5ba145fc9: Deleted the table.
+2021-01-24T17:31:05.746646317 5750.026590s info: Table 374a2662-f844-4320-acca-c7a2685f119f: Starting a new Raft election for term 1.
+2021-01-24T17:31:05.746804216 5750.026747s info: Table 374a2662-f844-4320-acca-c7a2685f119f: Added replica on this server.
+2021-01-24T17:31:05.808351974 5750.088296s info: Table 374a2662-f844-4320-acca-c7a2685f119f: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-24T17:31:07.567298059 5751.847242s info: Table b69652a5-c07c-496c-bcc1-9a985e0dd14c: Starting a new Raft election for term 1.
+2021-01-24T17:31:07.567543286 5751.847487s info: Table b69652a5-c07c-496c-bcc1-9a985e0dd14c: Added replica on this server.
+2021-01-24T17:31:07.630936671 5751.910880s info: Table b69652a5-c07c-496c-bcc1-9a985e0dd14c: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-24T17:31:09.127126818 5753.407070s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/374a2662-f844-4320-acca-c7a2685f119f
+2021-01-24T17:31:09.127136424 5753.407080s info: Table 374a2662-f844-4320-acca-c7a2685f119f: Deleted the table.
+2021-01-24T17:31:09.177170225 5753.457114s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/b69652a5-c07c-496c-bcc1-9a985e0dd14c
+2021-01-24T17:31:09.177180343 5753.457124s info: Table b69652a5-c07c-496c-bcc1-9a985e0dd14c: Deleted the table.
+2021-01-24T17:46:28.389273263 6672.669217s info: Table 54369d41-9625-41c1-99db-4f105c4d5da9: Starting a new Raft election for term 1.
+2021-01-24T17:46:28.389385498 6672.669329s info: Table 54369d41-9625-41c1-99db-4f105c4d5da9: Added replica on this server.
+2021-01-24T17:46:28.446831726 6672.726776s info: Table 54369d41-9625-41c1-99db-4f105c4d5da9: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-24T17:46:30.332555227 6674.612499s info: Table 7e59427c-bf16-46b6-b067-e9363da32b8e: Starting a new Raft election for term 1.
+2021-01-24T17:46:30.332855163 6674.612799s info: Table 7e59427c-bf16-46b6-b067-e9363da32b8e: Added replica on this server.
+2021-01-24T17:46:30.391385666 6674.671330s info: Table 7e59427c-bf16-46b6-b067-e9363da32b8e: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-24T17:46:31.930138499 6676.210082s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/54369d41-9625-41c1-99db-4f105c4d5da9
+2021-01-24T17:46:31.930145637 6676.210089s info: Table 54369d41-9625-41c1-99db-4f105c4d5da9: Deleted the table.
+2021-01-24T17:46:31.994529921 6676.274474s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/7e59427c-bf16-46b6-b067-e9363da32b8e
+2021-01-24T17:46:31.994540101 6676.274483s info: Table 7e59427c-bf16-46b6-b067-e9363da32b8e: Deleted the table.
+2021-01-24T17:47:33.042584994 6737.322529s info: Table 9e5312f3-e7f8-453b-8ffa-8e21102039c7: Starting a new Raft election for term 1.
+2021-01-24T17:47:33.042853096 6737.322797s info: Table 9e5312f3-e7f8-453b-8ffa-8e21102039c7: Added replica on this server.
+2021-01-24T17:47:33.096804384 6737.376748s info: Table 9e5312f3-e7f8-453b-8ffa-8e21102039c7: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-24T17:47:34.939205121 6739.219149s info: Table ba638849-defb-4118-853f-796d05dccdbc: Starting a new Raft election for term 1.
+2021-01-24T17:47:34.939316586 6739.219260s info: Table ba638849-defb-4118-853f-796d05dccdbc: Added replica on this server.
+2021-01-24T17:47:34.997035649 6739.276979s info: Table ba638849-defb-4118-853f-796d05dccdbc: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-24T17:47:36.533053504 6740.812997s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/9e5312f3-e7f8-453b-8ffa-8e21102039c7
+2021-01-24T17:47:36.533061913 6740.813005s info: Table 9e5312f3-e7f8-453b-8ffa-8e21102039c7: Deleted the table.
+2021-01-24T17:47:36.588561886 6740.868505s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/ba638849-defb-4118-853f-796d05dccdbc
+2021-01-24T17:47:36.588567823 6740.868511s info: Table ba638849-defb-4118-853f-796d05dccdbc: Deleted the table.
+2021-01-24T17:51:21.081868836 6965.361813s info: Table 10176109-b70d-4fc9-89bb-1fe370e32a46: Starting a new Raft election for term 1.
+2021-01-24T17:51:21.082116271 6965.362060s info: Table 10176109-b70d-4fc9-89bb-1fe370e32a46: Added replica on this server.
+2021-01-24T17:51:21.172272251 6965.452216s info: Table 10176109-b70d-4fc9-89bb-1fe370e32a46: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-24T17:51:23.023334278 6967.303279s info: Table 87314ffc-1354-40d4-80d0-fefbb4f67583: Starting a new Raft election for term 1.
+2021-01-24T17:51:23.023636416 6967.303580s info: Table 87314ffc-1354-40d4-80d0-fefbb4f67583: Added replica on this server.
+2021-01-24T17:51:23.072195492 6967.352139s info: Table 87314ffc-1354-40d4-80d0-fefbb4f67583: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-24T17:51:24.622322597 6968.902266s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/10176109-b70d-4fc9-89bb-1fe370e32a46
+2021-01-24T17:51:24.622335067 6968.902278s info: Table 10176109-b70d-4fc9-89bb-1fe370e32a46: Deleted the table.
+2021-01-24T17:51:24.685988316 6968.965932s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/87314ffc-1354-40d4-80d0-fefbb4f67583
+2021-01-24T17:51:24.685995012 6968.965938s info: Table 87314ffc-1354-40d4-80d0-fefbb4f67583: Deleted the table.
+2021-01-24T21:35:19.327064991 20403.607009s info: Table 59924318-88fe-4d70-b324-4e059ce1c874: Starting a new Raft election for term 1.
+2021-01-24T21:35:19.327262413 20403.607206s info: Table 59924318-88fe-4d70-b324-4e059ce1c874: Added replica on this server.
+2021-01-24T21:35:19.383258069 20403.663202s info: Table 59924318-88fe-4d70-b324-4e059ce1c874: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-24T21:35:21.939375169 20406.219319s info: Table 1eeec0f0-1576-4066-9e63-6385e596d859: Starting a new Raft election for term 1.
+2021-01-24T21:35:21.939547523 20406.219491s info: Table 1eeec0f0-1576-4066-9e63-6385e596d859: Added replica on this server.
+2021-01-24T21:35:21.994801603 20406.274745s info: Table 1eeec0f0-1576-4066-9e63-6385e596d859: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-24T21:35:23.528713778 20407.808658s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/1eeec0f0-1576-4066-9e63-6385e596d859
+2021-01-24T21:35:23.528723899 20407.808667s info: Table 1eeec0f0-1576-4066-9e63-6385e596d859: Deleted the table.
+2021-01-24T21:35:23.597812998 20407.877756s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/59924318-88fe-4d70-b324-4e059ce1c874
+2021-01-24T21:35:23.597820578 20407.877764s info: Table 59924318-88fe-4d70-b324-4e059ce1c874: Deleted the table.
+2021-01-24T21:54:21.074530556 21545.354474s info: Table dbba02c8-3b84-42cb-b3e5-10b3e923ed03: Starting a new Raft election for term 1.
+2021-01-24T21:54:21.074691892 21545.354635s info: Table dbba02c8-3b84-42cb-b3e5-10b3e923ed03: Added replica on this server.
+2021-01-24T21:54:21.130455822 21545.410400s info: Table dbba02c8-3b84-42cb-b3e5-10b3e923ed03: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-24T21:54:22.917589892 21547.197534s info: Table 618b7e36-fa03-4d5b-9692-c89725db504e: Starting a new Raft election for term 1.
+2021-01-24T21:54:22.917737394 21547.197681s info: Table 618b7e36-fa03-4d5b-9692-c89725db504e: Added replica on this server.
+2021-01-24T21:54:22.974800512 21547.254745s info: Table 618b7e36-fa03-4d5b-9692-c89725db504e: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-24T21:54:24.648557979 21548.928501s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/618b7e36-fa03-4d5b-9692-c89725db504e
+2021-01-24T21:54:24.648566289 21548.928509s info: Table 618b7e36-fa03-4d5b-9692-c89725db504e: Deleted the table.
+2021-01-24T21:54:24.710312729 21548.990256s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/dbba02c8-3b84-42cb-b3e5-10b3e923ed03
+2021-01-24T21:54:24.710323033 21548.990266s info: Table dbba02c8-3b84-42cb-b3e5-10b3e923ed03: Deleted the table.
+2021-01-24T22:23:23.909984563 23288.189929s info: Table ef8de1ae-bc73-462d-a7eb-923239b526fd: Added replica on this server.
+2021-01-24T22:23:23.910060934 23288.190004s info: Table ef8de1ae-bc73-462d-a7eb-923239b526fd: Starting a new Raft election for term 1.
+2021-01-24T22:23:23.990197959 23288.270142s info: Table ef8de1ae-bc73-462d-a7eb-923239b526fd: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-24T22:23:25.919293107 23290.199237s info: Table 4814de45-aafc-4461-a375-c80943fbcf01: Starting a new Raft election for term 1.
+2021-01-24T22:23:25.919710725 23290.199655s info: Table 4814de45-aafc-4461-a375-c80943fbcf01: Added replica on this server.
+2021-01-24T22:23:25.979375258 23290.259319s info: Table 4814de45-aafc-4461-a375-c80943fbcf01: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-24T22:23:27.647744093 23291.927688s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/4814de45-aafc-4461-a375-c80943fbcf01
+2021-01-24T22:23:27.647755000 23291.927698s info: Table 4814de45-aafc-4461-a375-c80943fbcf01: Deleted the table.
+2021-01-24T22:23:27.704224612 23291.984168s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/ef8de1ae-bc73-462d-a7eb-923239b526fd
+2021-01-24T22:23:27.704231773 23291.984175s info: Table ef8de1ae-bc73-462d-a7eb-923239b526fd: Deleted the table.
+2021-01-25T04:52:52.012163862 46656.292108s info: Table 6d4b3bc7-8f9e-46e8-8b26-ac24fff12ed7: Starting a new Raft election for term 1.
+2021-01-25T04:52:52.012422288 46656.292366s info: Table 6d4b3bc7-8f9e-46e8-8b26-ac24fff12ed7: Added replica on this server.
+2021-01-25T04:52:52.086946734 46656.366891s info: Table 6d4b3bc7-8f9e-46e8-8b26-ac24fff12ed7: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-25T04:52:53.932854638 46658.212798s info: Table cf5839e0-c423-431d-aba2-06ba6b722dc7: Starting a new Raft election for term 1.
+2021-01-25T04:52:53.933035267 46658.212979s info: Table cf5839e0-c423-431d-aba2-06ba6b722dc7: Added replica on this server.
+2021-01-25T04:52:53.987134081 46658.267078s info: Table cf5839e0-c423-431d-aba2-06ba6b722dc7: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-25T04:52:56.475032593 46660.754976s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/6d4b3bc7-8f9e-46e8-8b26-ac24fff12ed7
+2021-01-25T04:52:56.475039796 46660.754983s info: Table 6d4b3bc7-8f9e-46e8-8b26-ac24fff12ed7: Deleted the table.
+2021-01-25T04:52:56.522793081 46660.802737s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/cf5839e0-c423-431d-aba2-06ba6b722dc7
+2021-01-25T04:52:56.522799633 46660.802743s info: Table cf5839e0-c423-431d-aba2-06ba6b722dc7: Deleted the table.
+2021-01-25T05:00:58.743922031 47143.023866s info: Table 3cf65080-630d-44e2-8502-c265fb103301: Starting a new Raft election for term 1.
+2021-01-25T05:00:58.744096433 47143.024040s info: Table 3cf65080-630d-44e2-8502-c265fb103301: Added replica on this server.
+2021-01-25T05:00:58.802899235 47143.082843s info: Table 3cf65080-630d-44e2-8502-c265fb103301: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-25T05:01:00.629073151 47144.909017s info: Table ef3914e1-7c1f-44b6-9c6c-3ff6f59c240c: Starting a new Raft election for term 1.
+2021-01-25T05:01:00.629435899 47144.909380s info: Table ef3914e1-7c1f-44b6-9c6c-3ff6f59c240c: Added replica on this server.
+2021-01-25T05:01:00.691980507 47144.971924s info: Table ef3914e1-7c1f-44b6-9c6c-3ff6f59c240c: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-25T05:01:02.356047982 47146.635991s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/3cf65080-630d-44e2-8502-c265fb103301
+2021-01-25T05:01:02.356054366 47146.635998s info: Table 3cf65080-630d-44e2-8502-c265fb103301: Deleted the table.
+2021-01-25T05:01:02.416207681 47146.696151s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/ef3914e1-7c1f-44b6-9c6c-3ff6f59c240c
+2021-01-25T05:01:02.416215570 47146.696159s info: Table ef3914e1-7c1f-44b6-9c6c-3ff6f59c240c: Deleted the table.
+2021-01-25T05:03:20.330480790 47284.610424s info: Table 81d590bb-10c1-42e1-b83b-d5bf5409793c: Added replica on this server.
+2021-01-25T05:03:20.330599636 47284.610543s info: Table 81d590bb-10c1-42e1-b83b-d5bf5409793c: Starting a new Raft election for term 1.
+2021-01-25T05:03:20.403165790 47284.683110s info: Table 81d590bb-10c1-42e1-b83b-d5bf5409793c: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-25T05:03:22.250957938 47286.530901s info: Table 1934eef4-bad7-4a60-9328-648268fa29b0: Starting a new Raft election for term 1.
+2021-01-25T05:03:22.251070392 47286.531014s info: Table 1934eef4-bad7-4a60-9328-648268fa29b0: Added replica on this server.
+2021-01-25T05:03:22.314713285 47286.594657s info: Table 1934eef4-bad7-4a60-9328-648268fa29b0: This server is Raft leader for term 1. Latest log index is 0.
+2021-01-25T05:03:23.972136265 47288.252080s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/1934eef4-bad7-4a60-9328-648268fa29b0
+2021-01-25T05:03:23.972145923 47288.252089s info: Table 1934eef4-bad7-4a60-9328-648268fa29b0: Deleted the table.
+2021-01-25T05:03:24.027785858 47288.307729s notice: Removing file /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data/81d590bb-10c1-42e1-b83b-d5bf5409793c
+2021-01-25T05:03:24.027794902 47288.307738s info: Table 81d590bb-10c1-42e1-b83b-d5bf5409793c: Deleted the table.
+2021-01-25T07:05:22.375796674 54606.655741s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2021-01-25T07:05:22.376005794 54606.655949s notice: Shutting down client connections...
+2021-01-25T07:05:22.376112483 54606.656056s notice: All client connections closed.
+2021-01-25T07:05:22.376119009 54606.656062s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2021-01-25T07:05:22.493515126 54606.773459s notice: Storage engine shut down.

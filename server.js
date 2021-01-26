@@ -1,6 +1,7 @@
 const express = require('express');
 const multer = require('multer');
 const ext = require('file-extension');
+const morgan = require('morgan');
 
 let storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -17,7 +18,13 @@ const aplication = express();
 //PARA INDICARLE AL SERVIDOR QUE UTILIZAREMOS UN MOTOR DE PLANTILLA.
 aplication.set('view engine', 'pug');
 
-//DEFINIRLE UN NUEVO MILDDWILE Y SIRVE PARA UTILIZAR UN ARCHIVO ESTATICO EN ESTE CASO SERÍA COMO UNA CARPETA VIRTUAL "PUBLIC".
+//Middleware
+aplication.use(morgan('dev'));
+
+//En esta línea, le estamos indicando al framework de express que nos devuelva lo que el usuario esté mandando en un input text o textarea y así lo puede entender el sv.
+aplication.use(express.urlencoded({extended: false}));
+
+//DEFINIRLE UN NUEVO MIDDLEWARE Y SIRVE PARA UTILIZAR UN ARCHIVO ESTATICO EN ESTE CASO SERÍA COMO UNA CARPETA VIRTUAL "PUBLIC".
 aplication.use(express.static('public'))
 
 //EN ESTE CASO SE DEFINEN LAS RUTAS QUE HACER PARTE DE NUESTRO PROYECTO E INDICANDO EL OBJETO PARA EL TÍTULO DE NUESTRA PÁGINA.
@@ -43,7 +50,7 @@ aplication.get('/api/pictures', function (req, res){
       username: 'jmontilla',
       avatar: 'fotoperfil.jpg'
     },
-    url: 'https://materializecss.com/images/office.jpg',
+    url: 'certificado.png',
     likes: 0,
     liked: false,
     createAt: new Date() 
