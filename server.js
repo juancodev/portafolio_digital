@@ -43,7 +43,7 @@ aplication.get('/signin', (req, res)=>{
 //(FIXEAR EL PROBLEMA DE SINCRONIZACIÓN DE PAGE CON LA LIBRERIA TITLE)
 aplication.get('/api/pictures', function (req, res){
   /* EN ESTE CASO PONDREMOS UN OBJETO CON LOS DATOS, ICONOS Y USUARIO QUIEN SUBIÓ LA FOTO
- EN LA PROPIEDAD "creatAt" CREAMOS UNA NUEVA INSTANCIA DE LA CLASE Date, EN DONDE SIGNIFICA 'new Date()' Hoy*/  
+ EN LA PROPIEDAD "creatAt" CREAMOS UNA NUEVA INSTANCIA DE LA CLASE Date, EN DONDE SIGNIFICA 'new Date()' Hoy*/
   const pictures = [
   {
     user: {
@@ -53,7 +53,7 @@ aplication.get('/api/pictures', function (req, res){
     url: 'certificado.png',
     likes: 0,
     liked: false,
-    createAt: new Date() 
+    createAt: new Date()
   },
 
 
@@ -140,10 +140,10 @@ aplication.get('/:username/:id', (req, res)=>{
 aplication.listen(3000, (err)=>{
     if (err != null)
     return console.log('Hubo un error con el servidor'), process.exit(1);
-    else 
+    else
     console.log('Servidor arriba');
 });
 
-/*LAS FUNCIONES PUEDEN O NO TENER UN NOMBRE, ES POR ESO QUE VEMOS QUE EN LOS ARROW FUNCTION NO SE LE COLOCA UN NOMBRE. ()=>*/ 
+/*LAS FUNCIONES PUEDEN O NO TENER UN NOMBRE, ES POR ESO QUE VEMOS QUE EN LOS ARROW FUNCTION NO SE LE COLOCA UN NOMBRE. ()=>*/
 
 //PASAMOS EL ARRAY A EL TEMPLATE DE LA HOMEPAGE

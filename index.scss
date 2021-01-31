@@ -26,8 +26,16 @@ body {
   font-family: Montserrat;
 }
 
-.phone {
+.portada {
   max-width: 100%;
+  max-height: 100%;
+  margin-left: -50px;
+}
+
+.portagaleria {
+  max-width: 100%;
+  margin-left: -50px;
+  margin-top: 5px;
 }
 
 .landing {
@@ -41,7 +49,7 @@ body {
 
 .login-box,
 .signup-box {
-  background: white;
+  background-color: white;
   border: 1px solid #edeeee;
   border-radius: 3px;
   padding: 10px 0;
@@ -198,7 +206,7 @@ $avatar-size: 48px;
         .picture {
           @include prefix(filter, blur(1.5em) grayscale(100%));
         }
-        
+
         .likes {
           display: flex;
         }
@@ -206,8 +214,9 @@ $avatar-size: 48px;
   */
     .picture{
       margin-bottom: 20px;
+      margin-left: 30px;
       display: block;
-      max-width: 100%;
+      max-width: 90%;
       max-height: 100%;
     }
 
@@ -231,7 +240,7 @@ $avatar-size: 48px;
       display: flex;
       font-size: 40px;
     }
-    
+
     a {
       color: #fafafa;
     }

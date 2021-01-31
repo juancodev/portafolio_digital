@@ -8,7 +8,7 @@ const IntlRelativeFormat = require('intl-relativeformat');
 let rf = new IntlRelativeFormat('es');
 
 //LUEGO CREAMOS UNA FUNCION QUE NOS PERMITA RENDERIZAR LA IMAGEN CADA VEZ HAYA CAMBIOS
-module.exports = function pictureCards(pic) { 
+module.exports = function pictureCards(pic) {
   let el;
   function render(picture) {
     return yo`<div class="card ${picture.liked ? 'liked' : ''}">
@@ -21,11 +21,11 @@ module.exports = function pictureCards(pic) {
         <img src="${picture.user.avatar}" class="avatar" />
         <span class="username">${picture.user.username}</span>
       </a>
-      <small class="right time">hace 1 día</small>
+      <small class="right time">hace un momento</small>
       <p>
         <a class="left" href="#" onclick=${like.bind(null, true)}><i class="material-icons blue100">star_border</i></a>
         <a class="left" href="#" onclick=${like.bind(null, false)}><i class="material-icons green200">star</i></a>
-        <span class="left likes">${picture.likes} me gusta</span>
+        <span class="left likes">${picture.likes} Favorito</span>
       </p>
     </div>
   </div>`;
@@ -58,7 +58,7 @@ module.exports = function pictureCards(pic) {
       pic.likedAward = false
       doRender()
     }, 1500);
-    
+
     //ESTE RETURN ME PERMITE EVITAR QUE SE VUELVA A REPETIR LA MISMA SENTECIA
     return false;
   };
