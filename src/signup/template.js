@@ -6,7 +6,7 @@ let signupForm = yo `<div class="col s12 m7">
               <div class="row">
                 <div class="signup-box">
                   <h1 class="portafolio">Portafolio Digital</h1>
-                  <form class="signup-form">
+                  <form class="signup-form" action="/signup" method="POST">
                     <h2>¡Regístrate para subir tus proyectos personales y poder demostrar tus habilidades!</h2>
                     <div class="section">
                       <a class="btn btn-fb hide-on-small-only">Iniciar sesión con Facebook</a>

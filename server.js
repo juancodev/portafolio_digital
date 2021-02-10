@@ -1,7 +1,17 @@
 const express = require('express');
 const multer = require('multer');
 const ext = require('file-extension');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const expressSession = require('express-session');
+const passport = require('passport');
+const portafolio = require('portafolio_digital-client');
 const morgan = require('morgan');
+const config = require('./config');
+
+//  Para instanciarlo
+let client = portafolio.createClient(config.client);
+
 
 let storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -15,6 +25,25 @@ let storage = multer.diskStorage({
 let upload = multer({ storage: storage }).single('picture');
 
 const aplication = express();
+
+//  buscamos que cada petición que haga http request venga de formato json sea entendible
+aplication.set(bodyParser.json());
+aplication.use(bodyParser.urlencoded({ extended: false }));
+aplication.use(cookieParser());
+//  Indicamos el middleware de sesión con express-session
+aplication.use(expressSession({
+  secret: config.secret,
+  //  para que no vuelva a guardar la sesión
+  resave: false,
+  //  y para que no almacene sesiones que no han sido inicializada
+  saveUninitialized: false
+}));
+
+//  después de implementar los middleware que irán paso a paso en express, vamos a inicializar passport
+aplication.use(passport.initialize());
+//  y le decimos a express que nos defina las sesiones
+aplication.use(passport.session());
+
 //PARA INDICARLE AL SERVIDOR QUE UTILIZAREMOS UN MOTOR DE PLANTILLA.
 aplication.set('view engine', 'pug');
 
@@ -34,6 +63,17 @@ aplication.get('/', (req, res)=>{
 
 aplication.get('/signup', (req, res)=>{
     res.render('index', { title : 'Portafolio - Signup'});
+});
+
+//  creamos una petición http de tipo post y obtiene el usuario del request body. Y eso se debe a que utilizamos el middleware de body-parser ya el objeto me llegará ya procesado
+aplication.post('/signup', function (req, res) {
+  let user = req.body;
+  client.saveUser(user, function (err, usr) {
+    if (err) return res.status(500).send(err.message);
+
+    //  y si todo esta bien, vamos a hacer una redirección a nuestro login
+    res.redirect('/signin');
+  })
 });
 
 aplication.get('/signin', (req, res)=>{
