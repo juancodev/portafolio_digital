@@ -185,3 +185,26 @@
 2021-01-25T07:05:22.376112483 54606.656056s notice: All client connections closed.
 2021-01-25T07:05:22.376119009 54606.656062s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
 2021-01-25T07:05:22.493515126 54606.773459s notice: Storage engine shut down.
+2021-02-12T01:29:25.074994572 0.259749s notice: Running rethinkdb 2.4.1~0focal (CLANG 10.0.0 )...
+2021-02-12T01:29:25.160182523 0.344937s notice: Running on Linux 5.8.0-43-generic x86_64
+2021-02-12T01:29:25.160309834 0.345062s notice: Loading data from directory /home/jmontilla/Escritorio/proyecto/portafolio_digital_nueva_rama/portafolio_digital/rethinkdb_data
+2021-02-12T01:29:25.495632846 0.680385s info: Automatically using cache size of 2039 MB
+2021-02-12T01:29:25.535840284 0.720593s notice: Listening for intracluster connections on port 29015
+2021-02-12T01:29:25.578100473 0.762853s notice: Listening for client driver connections on port 28015
+2021-02-12T01:29:25.578211281 0.762963s notice: Listening for administrative HTTP connections on port 8080
+2021-02-12T01:29:25.578219737 0.762972s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2021-02-12T01:29:25.578224837 0.762977s notice: Listening on driver addresses: 127.0.0.1, ::1
+2021-02-12T01:29:25.578237265 0.762989s notice: Listening on http addresses: 127.0.0.1, ::1
+2021-02-12T01:29:25.578244679 0.762997s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2021-02-12T01:29:25.578251140 0.763003s notice: Server ready, "jmontilla_VIT_P2402_hcl" d388d192-f361-46fa-8802-03e15a047a0a
+2021-02-12T01:30:34.302655597 69.487408s info: Table 32bc40de-77fd-490d-91de-4134b3a67a9c: Added replica on this server.
+2021-02-12T01:30:34.302718595 69.487471s info: Table 32bc40de-77fd-490d-91de-4134b3a67a9c: Starting a new Raft election for term 1.
+2021-02-12T01:30:34.402337370 69.587090s info: Table 32bc40de-77fd-490d-91de-4134b3a67a9c: This server is Raft leader for term 1. Latest log index is 0.
+2021-02-12T01:53:01.270217578 1416.454970s info: Table 3780dd49-de2f-4442-a4a3-658d128b90c9: Starting a new Raft election for term 1.
+2021-02-12T01:53:01.270319770 1416.455072s info: Table 3780dd49-de2f-4442-a4a3-658d128b90c9: Added replica on this server.
+2021-02-12T01:53:01.330256246 1416.515009s info: Table 3780dd49-de2f-4442-a4a3-658d128b90c9: This server is Raft leader for term 1. Latest log index is 0.
+2021-02-12T08:24:50.200410410 24925.385163s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2021-02-12T08:24:50.200655625 24925.385408s notice: Shutting down client connections...
+2021-02-12T08:24:50.238518287 24925.423271s notice: All client connections closed.
+2021-02-12T08:24:50.238524279 24925.423276s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2021-02-12T08:24:50.332256372 24925.517009s notice: Storage engine shut down.

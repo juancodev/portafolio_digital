@@ -2480,9 +2480,7 @@ td, th {
   display: none !important; }
 
 .left-align {
-  text-align: left;
-  margin-top: 50px;
-  margin-left: 20px; }
+  text-align: left; }
 
 .right-align {
   text-align: right; }
@@ -6751,10 +6749,6 @@ body {
       font-size: 40px; }
     .profile .picture-container a {
       color: #fafafa; }
-
-h2.left-align {
-  margin-top: 50px;
-  margin-left: 20px; }
 
 .like-award {
   font-size: 10em;

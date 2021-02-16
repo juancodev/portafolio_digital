@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const expressSession = require('express-session');
 const passport = require('passport');
 const portafolio = require('portafolio_digital-client');
+const auth = require('./auth');
 const morgan = require('morgan');
 const config = require('./config');
 
@@ -27,7 +28,7 @@ let upload = multer({ storage: storage }).single('picture');
 const aplication = express();
 
 //  buscamos que cada petición que haga http request venga de formato json sea entendible
-aplication.set(bodyParser.json());
+aplication.use(bodyParser.json());
 aplication.use(bodyParser.urlencoded({ extended: false }));
 aplication.use(cookieParser());
 //  Indicamos el middleware de sesión con express-session
@@ -56,12 +57,17 @@ aplication.use(express.urlencoded({extended: false}));
 //DEFINIRLE UN NUEVO MIDDLEWARE Y SIRVE PARA UTILIZAR UN ARCHIVO ESTATICO EN ESTE CASO SERÍA COMO UNA CARPETA VIRTUAL "PUBLIC".
 aplication.use(express.static('public'))
 
+//Después de todos los middleware que tenemos en nuestra aplicación le pasaremos la estrategia de registro
+passport.use(auth.localStrategy);
+passport.deserializeUser(auth.deserializeUser);
+passport.serializeUser(auth.serializeUser);
+
 //EN ESTE CASO SE DEFINEN LAS RUTAS QUE HACER PARTE DE NUESTRO PROYECTO E INDICANDO EL OBJETO PARA EL TÍTULO DE NUESTRA PÁGINA.
-aplication.get('/', (req, res)=>{
+aplication.get('/', function (req, res) {
     res.render('index', { title: 'Portafolio'});
 });
 
-aplication.get('/signup', (req, res)=>{
+aplication.get('/signup', function (req, res) {
     res.render('index', { title : 'Portafolio - Signup'});
 });
 
@@ -69,16 +75,23 @@ aplication.get('/signup', (req, res)=>{
 aplication.post('/signup', function (req, res) {
   let user = req.body;
   client.saveUser(user, function (err, usr) {
-    if (err) return res.status(500).send(err.message);
+    if (err) return res.status(500).send(err.message)
 
     //  y si todo esta bien, vamos a hacer una redirección a nuestro login
     res.redirect('/signin');
-  })
+  });
 });
 
-aplication.get('/signin', (req, res)=>{
+aplication.get('/signin', function (req, res) {
     res.render('index', { title : 'Portafolio - Signin'});
-}) ;
+});
+
+aplication.post('/login', passport.authenticate('local', {
+  //Cuando nuestro login sea exitoso vamos a ir a la ruta inicial
+  successRedirect: '/',
+  //Si falló algo vamos a redireccionar al formulario signin
+  failureRedirect: '/signin'
+}));
 
 //(FIXEAR EL PROBLEMA DE SINCRONIZACIÓN DE PAGE CON LA LIBRERIA TITLE)
 aplication.get('/api/pictures', function (req, res){
@@ -88,7 +101,7 @@ aplication.get('/api/pictures', function (req, res){
   {
     user: {
       username: 'jmontilla',
-      avatar: 'fotoperfil.jpg'
+      avatar: 'fotoperfil.png'
     },
     url: 'certificado.png',
     likes: 0,
@@ -101,7 +114,7 @@ aplication.get('/api/pictures', function (req, res){
   {
     user: {
       username: 'jmontilla',
-      avatar: 'fotoperfil.jpg'
+      avatar: 'fotoperfil.png'
     },
     url: 'https://materializecss.com/images/office.jpg',
     likes: 0,
@@ -115,7 +128,7 @@ aplication.get('/api/pictures', function (req, res){
   }, 2000);
 });
 
-aplication.post('/api/pictures', function (req, res) {
+aplication.post('/api/pictures', ensureAuth, function (req, res) {
   upload(req, res, function (err){
     if (err) {
       return res.send(500, "Error al subir archivo");
@@ -127,7 +140,7 @@ aplication.post('/api/pictures', function (req, res) {
 aplication.get('/api/user/:username', function (req, res){
   const user = {
     username: 'jmontilla',
-    avatar: 'fotoperfil.jpg',
+    avatar: 'fotoperfil.png',
     pictures: [
       {
         id: 1,
@@ -174,10 +187,18 @@ aplication.get('/:username/:id', (req, res)=>{
     res.render('index', { title : `Portafolio - ${req.params.username}`});
 });
 
+//creamos una función que nos va a garantizar si el usuario fue creado o no
+function ensureAuth (req, res, next) {
+  if (req.isAuthenticated()) {
+    return next()
+  }
+
+  res.status(401).send({ error: 'no esta autenticado' })
+}
 
 /* CON ESA CONDICIÓN ESTAMOS INDICANDO QUE SI ERROR ES DIFERENTE A NULL ENTONCES LA APLICACIÓN ME RETORNE NADA DE LO CONTRARIO ME MUESTRE UN MENSAJE EN CONSOLA DICIENDO QUE HUBO UN ERROR, "process.exit(1)" NOS SIRVE PARA INDICAR QUE SI HAY UN ERROR DETENGA LA APLICACIÓN DE NO HABER SIEMPRE DEBE SER DISTINTO QUE "0". */
 
-aplication.listen(3000, (err)=>{
+aplication.listen(3000, function (err) {
     if (err != null)
     return console.log('Hubo un error con el servidor'), process.exit(1);
     else
