@@ -8,8 +8,8 @@ let signinForm = yo `<div class="col s12 m7">
                   <h1 class="portafolio">Portafolio Digital</h1>
                   <form class="signup-form" action="/login" method="POST">
                     <div class="section">
-                      <a class="btn btn-fb hide-on-small-only">Iniciar sesión con Facebook</a>
-                      <a class="btn btn-fb hide-on-med-and-up"><i class="fab fa-facebook-square"></i>Iniciar sesión</a>
+                      <a href="/auth/facebook" rel="external" class="btn btn-fb hide-on-small-only">Iniciar sesión con Facebook</a>
+                      <a href="/auth/facebook" rel="external" class="btn btn-fb hide-on-med-and-up"><i class="fab fa-facebook-square"></i> Iniciar sesión</a>
                     </div>
                     <div class="divider"></div>
                     <div class="section">

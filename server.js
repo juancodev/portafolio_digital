@@ -9,6 +9,7 @@ const portafolio = require('portafolio_digital-client');
 const auth = require('./auth');
 const morgan = require('morgan');
 const config = require('./config');
+const port = process.env.PORT || 5050;
 
 //  Para instanciarlo
 let client = portafolio.createClient(config.client);
@@ -59,6 +60,7 @@ aplication.use(express.static('public'))
 
 //Después de todos los middleware que tenemos en nuestra aplicación le pasaremos la estrategia de registro
 passport.use(auth.localStrategy);
+passport.use(auth.facebookStrategy);
 passport.deserializeUser(auth.deserializeUser);
 passport.serializeUser(auth.serializeUser);
 
@@ -92,6 +94,37 @@ aplication.post('/login', passport.authenticate('local', {
   //Si falló algo vamos a redireccionar al formulario signin
   failureRedirect: '/signin'
 }));
+
+aplication.get('/logout', function (req, res) {
+  req.logout();
+
+  res.redirect('/');
+});
+
+//En la parte en donde está el "scope", significa qué permisos me va a brindar la estrategia de facebook para autenticar y qué necesito con respecto al permiso del usuario, en este caso el email.
+aplication.get('/auth/facebook', passport.authenticate('facebook', { scope: 'email' }));
+
+aplication.get('/auth/facebook/callback', passport.authenticate('facebook', {
+  successRedirect: '/',
+  failureRedirect: '/signin'
+}));
+
+//creamos una función que nos va a garantizar si el usuario fue creado o no
+function ensureAuth (req, res, next) {
+  if (req.isAuthenticated()) {
+    return next()
+  }
+
+  res.status(401).send({ error: 'no esta autenticado' })
+}
+
+aplication.get('/whoami', function (req, res) {
+  if (req.isAuthenticated()) {
+    return res.json(req.user);
+  }
+
+  res.json({ auth: false })
+});
 
 //(FIXEAR EL PROBLEMA DE SINCRONIZACIÓN DE PAGE CON LA LIBRERIA TITLE)
 aplication.get('/api/pictures', function (req, res){
@@ -187,22 +220,16 @@ aplication.get('/:username/:id', (req, res)=>{
     res.render('index', { title : `Portafolio - ${req.params.username}`});
 });
 
-//creamos una función que nos va a garantizar si el usuario fue creado o no
-function ensureAuth (req, res, next) {
-  if (req.isAuthenticated()) {
-    return next()
-  }
-
-  res.status(401).send({ error: 'no esta autenticado' })
-}
 
 /* CON ESA CONDICIÓN ESTAMOS INDICANDO QUE SI ERROR ES DIFERENTE A NULL ENTONCES LA APLICACIÓN ME RETORNE NADA DE LO CONTRARIO ME MUESTRE UN MENSAJE EN CONSOLA DICIENDO QUE HUBO UN ERROR, "process.exit(1)" NOS SIRVE PARA INDICAR QUE SI HAY UN ERROR DETENGA LA APLICACIÓN DE NO HABER SIEMPRE DEBE SER DISTINTO QUE "0". */
 
-aplication.listen(3000, function (err) {
-    if (err != null)
-    return console.log('Hubo un error con el servidor'), process.exit(1);
-    else
-    console.log('Servidor arriba');
+aplication.listen(port, function (err) {
+    if (err) {
+      console.error('hubo un error')
+      process.exit(1);
+    }
+
+    console.log(`Portafolio Digital escuchando en el puerto ${port} ¡Servidor arriba!`);
 });
 
 /*LAS FUNCIONES PUEDEN O NO TENER UN NOMBRE, ES POR ESO QUE VEMOS QUE EN LOS ARROW FUNCTION NO SE LE COLOCA UN NOMBRE. ()=>*/

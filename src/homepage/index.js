@@ -2,17 +2,18 @@ const page = require('page');
 const template = require('./template');
 const empty = require('empty-element');
 const title = require('title');
-const request = require('superagent');
 const header = require('../header');
+const utils = require('../utils');
+const axios = require('axios');
 
-page('/', header, loading, asyncLoad, function (ctx, next){
+page('/', utils.loadAuth, header, loading, loadPicturesAxios, function (ctx, next){
   title('Portafolio');
   let main = document.getElementById('main-container');
 
   empty(main).appendChild(template(ctx.pictures));
 });
 
-/* 1: primero creamos una variable que almacena un elemento que crearemos con el método createElement(y adentro se le pasa la etiqueta html) dentro del DOM (document) 
+/* 1: primero creamos una variable que almacena un elemento que crearemos con el método createElement(y adentro se le pasa la etiqueta html) dentro del DOM (document)
 
 2: utilizamos el atributo ya creado (el) y le asignamos una nueva clase con la propiedad classList.add(nombre de la clase)
 
@@ -31,29 +32,31 @@ function loading (ctx, next) {
   next();
 }
 
-async function asyncLoad(ctx, next){
-  try {
-    ctx.pictures = await fetch('/api/pictures').then(res => res.json());
-    next();
-  } catch (err){
-    return console.log(err);
-  }
+function loadPicturesAxios (ctx, next) {
+  axios
+    .get('/api/pictures')
+    .then(function (res) {
+      ctx.pictures = res.data;
+      next();
+    })
+    .catch(function (err) {
+      console.log(err);
+    })
 }
+
 //await nos permite esperar hasta que las 2 promesas se cumplan como lo es fetch y then
-
-
     /* function loadPicturesFetch (ctx, next){
       request
         .get('/api/pictures')
         .end(function (err, res){
         if (err) return console.log(err);
-    
+
         ctx.pictures = res.body;
         next();
         })
-    
+
     } */
-    
+
     /* function loadPicturesFetch (ctx, next){
       fetch('/api/pictures')
         .then(function (res) {

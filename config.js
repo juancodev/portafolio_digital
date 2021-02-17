@@ -11,6 +11,13 @@ const config = {
       auth: 'http://api.portafolio_digital.com/auth'
     }
   },
+  auth: {
+    facebook: {
+      clientID: process.env.FACEBOOK_CLIENT_ID,
+      clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
+      callbackURL: 'https://portafoliodigital.com/auth/facebook/callback'
+    }
+  },
   secret: process.env.PORTAFOLIO_SECRET || 'p0rt4f0l10'
 }
 
@@ -21,6 +28,8 @@ if (process.env.NODE_ENV !== 'production') {
     users: 'http://localhost:5001',
     auth: 'http://localhost:5002'
   }
+
+  config.auth.facebook.callbackURL = 'https://portafoliodigital.test:5050/auth/facebook/callback'
 }
 
 module.exports = config

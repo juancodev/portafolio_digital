@@ -6,7 +6,7 @@ const picture = require('../picture-card');
 //UNA VEZ REQUERIDA EL INDEX DE PICTURE, LA INVOCAMOS CON UNA FUNCIÓN
 
 module.exports = function pictureCard (pictures) {
-  let el = yo `<div class="container timeline">
+  let el = yo`<div class="container timeline">
     <div class="row">
       <div class="col s12 m10 offset-m1 l8 offset-l2 center-align">
         <form enctype="multipart/form-data" class="form-upload" id="formUpload" onsubmit=${onsubmit}>
@@ -58,4 +58,4 @@ module.exports = function pictureCard (pictures) {
     }
 
   return layaout(el);
-}; 
+};
