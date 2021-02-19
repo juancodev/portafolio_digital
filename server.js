@@ -9,7 +9,9 @@ const portafolio = require('portafolio_digital-client');
 const auth = require('./auth');
 const morgan = require('morgan');
 const config = require('./config');
-const port = process.env.PORT || 5050;
+const port = process.env.PORT || 10443;
+const fs = require('fs');
+const https = require('https');
 
 //  Para instanciarlo
 let client = portafolio.createClient(config.client);
@@ -127,38 +129,16 @@ aplication.get('/whoami', function (req, res) {
 });
 
 //(FIXEAR EL PROBLEMA DE SINCRONIZACIÓN DE PAGE CON LA LIBRERIA TITLE)
-aplication.get('/api/pictures', function (req, res){
+aplication.get('/api/pictures', function (req, res, next){
   /* EN ESTE CASO PONDREMOS UN OBJETO CON LOS DATOS, ICONOS Y USUARIO QUIEN SUBIÓ LA FOTO
  EN LA PROPIEDAD "creatAt" CREAMOS UNA NUEVA INSTANCIA DE LA CLASE Date, EN DONDE SIGNIFICA 'new Date()' Hoy*/
-  const pictures = [
-  {
-    user: {
-      username: 'jmontilla',
-      avatar: 'fotoperfil.png'
-    },
-    url: 'certificado.png',
-    likes: 0,
-    liked: false,
-    createAt: new Date()
-  },
 
+  client.listPictures(function (err, pictures) {
+    if (err) return res.send([]);
 
-  /* EN LA LÍNEA 34, PRIMERO CREAMOS UNA NUEVA INSTANCIA DE LA CLASE "Date()", ENVIÁNDOLE COMO MÉTODO LA FUNCIÓN QUE NOS PERMITE MODIFICAR O CAMBIAR LA HORA ".setDate(new Date().getDate() - 10)" Y DENTRO COMO PARÁMETRO SE LE ENVIA LA FECHA ACTUAL CON "new Date()" Y DESPUÉS DE OBTENER EL DÍA DE HOY CON LA FUNCIÓN "getDate()" LE RESTAMOS LOS DÍAS QUE QUEREMOS.  */
-  {
-    user: {
-      username: 'jmontilla',
-      avatar: 'fotoperfil.png'
-    },
-    url: 'https://materializecss.com/images/office.jpg',
-    likes: 0,
-    liked: false,
-    createAt: new Date()
-  },
-  ];
-
-  setTimeout(function () {
-  res.send(pictures);
-  }, 2000);
+    //vamos a responder con el arreglo de imágenes que recibimos del cliente api
+    res.send(pictures);
+  })
 });
 
 aplication.post('/api/pictures', ensureAuth, function (req, res) {
@@ -166,48 +146,40 @@ aplication.post('/api/pictures', ensureAuth, function (req, res) {
     if (err) {
       return res.send(500, "Error al subir archivo");
     }
-    res.send('Archivo subido correctamente');
+
+    let user = req.user;
+    let token = req.user.token;
+    let username = req.user.username;
+    let src = './uploads'
+    //MUY IMPORTANTE REVISAR PARA GOOGLE CLOUD 06:24 / let src = req.file.location;
+
+    client.savePicture({
+      src: src,
+      userId: username,
+      user: {
+        username: username,
+        avatar: user.avatar,
+        name: user.name
+      }
+    }, token, function (err, img) {
+      if (err) return res.send(500).send(err.message);
+      res.send('Archivo subido correctamente');
+
+    })
   })
 });
 
 aplication.get('/api/user/:username', function (req, res){
-  const user = {
-    username: 'jmontilla',
-    avatar: 'fotoperfil.png',
-    pictures: [
-      {
-        id: 1,
-        src: 'certificado.png',
-        likes: 12
-      },
-      {
-        id:2,
-        src: 'servicio_comunitario_2.jpg',
-        likes: 11
-      },
-       {
-        id:3,
-        src: 'muestra_trabajo.jpg',
-        likes: 10
-      },
-       {
-        id:4,
-        src: 'muestra_trabajo_2.jpg',
-        likes: 13
-      },
-       {
-        id:5,
-        src: 'muestra_trabajo_3.jpg',
-        likes: 14
-      },
-       {
-        id:6,
-        src: 'muestra_trabajo_4.jpg',
-        likes: 15
-      },
-    ]
-  }
-  res.send(user);
+  //como esos valores vienen de los argumentos, lo obtendremos de ellos mismos
+  let username = req.params.username;
+
+  client.getUser(username, function (err, user) {
+    if (err) return res.status(404).send({ error: 'usuario no encontrado' })
+
+    res.send(user);
+  });
+
+
 });
 
 //RUTA PARA EL USUARIO
@@ -221,9 +193,11 @@ aplication.get('/:username/:id', (req, res)=>{
 });
 
 
-/* CON ESA CONDICIÓN ESTAMOS INDICANDO QUE SI ERROR ES DIFERENTE A NULL ENTONCES LA APLICACIÓN ME RETORNE NADA DE LO CONTRARIO ME MUESTRE UN MENSAJE EN CONSOLA DICIENDO QUE HUBO UN ERROR, "process.exit(1)" NOS SIRVE PARA INDICAR QUE SI HAY UN ERROR DETENGA LA APLICACIÓN DE NO HABER SIEMPRE DEBE SER DISTINTO QUE "0". */
-
-aplication.listen(port, function (err) {
+/* Para crear un servidor con el protocolo https y su certificado de autofirmado */
+https.createServer({
+  cert: fs.readFileSync('./certificate.crt'),
+  key: fs.readFileSync('./certificate.key')
+}, aplication).listen(port, function (err) {
     if (err) {
       console.error('hubo un error')
       process.exit(1);
@@ -231,6 +205,9 @@ aplication.listen(port, function (err) {
 
     console.log(`Portafolio Digital escuchando en el puerto ${port} ¡Servidor arriba!`);
 });
+
+/* CON ESA CONDICIÓN ESTAMOS INDICANDO QUE SI ERROR ES DIFERENTE A NULL ENTONCES LA APLICACIÓN ME RETORNE NADA DE LO CONTRARIO ME MUESTRE UN MENSAJE EN CONSOLA DICIENDO QUE HUBO UN ERROR, "process.exit(1)" NOS SIRVE PARA INDICAR QUE SI HAY UN ERROR DETENGA LA APLICACIÓN DE NO HABER SIEMPRE DEBE SER DISTINTO QUE "0". */
+
 
 /*LAS FUNCIONES PUEDEN O NO TENER UN NOMBRE, ES POR ESO QUE VEMOS QUE EN LOS ARROW FUNCTION NO SE LE COLOCA UN NOMBRE. ()=>*/
 

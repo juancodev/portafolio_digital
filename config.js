@@ -29,7 +29,7 @@ if (process.env.NODE_ENV !== 'production') {
     auth: 'http://localhost:5002'
   }
 
-  config.auth.facebook.callbackURL = 'https://portafoliodigital.test:5050/auth/facebook/callback'
+  config.auth.facebook.callbackURL = 'http://portafoliodigital.test:10443/auth/facebook/callback'
 }
 
 module.exports = config

@@ -11,8 +11,8 @@ module.exports = function userPageTemplate(user){
             <img src="${user.avatar}" class="responsive-img circle" />
           </div>
           <div class="col s12 m10 offset-m1 l6 left-align">
-            <h2 class="hide-on-large-only center-align">${user.username}</h2>
-            <h2 class="hide-on-med-and-down left-align">${user.username}</h2>
+            <h2 class="hide-on-large-only center-align">${user.name}</h2>
+            <h2 class="hide-on-med-and-down left-align">${user.name}</h2>
           </div>
         </div>
       </div>
@@ -20,7 +20,7 @@ module.exports = function userPageTemplate(user){
         ${user.pictures.map(function (picture){
           return yo` <div class="col s12 m6 l4">
             <div class="picture-container">
-              <img src="${picture.src}" class="picture materialboxed" data-caption=" ${picture.likes} ME GUSTA" />
+              <img src="${picture.src}" class="picture materialboxed" data-caption=" ${picture.likes || 0} ME GUSTA" />
             </div>
           </div>`
         })}
@@ -34,8 +34,8 @@ module.exports = function userPageTemplate(user){
 /*<a href="/${user.username}/${picture.id}" class="picture-container">
     <img src="${picture.src}" class="picture" />
     <div class="likes"><a href="#!"><i class="material-icons green200">star</i>${picture.likes}</a>
-    </div> 
-  </a> 
+    </div>
+  </a>
 
 
   <div class="modal-footer">
@@ -44,10 +44,10 @@ module.exports = function userPageTemplate(user){
     </div>
     <div class="btn btn-flat">
     </div>
-  </div> 
-              
-              
-              
+  </div>
+
+
+
   <div class="media">
   <img src="${picture.src}" class="materialboxed" data-caption=" ${picture.likes} ME GUSTA"/>
   </div>*/
