@@ -44,7 +44,7 @@ module.exports = function pictureCard (pictures) {
   }
 
   //TODAS LAS FUNCIONES QUE COMIENZAN CON ON, RECIBEN UN EVENTO COMO PARÁMETRO
-  function onsubmit(ev){
+  function onsubmit(ev) {
     ev.preventDefault();
 
     let data = new FormData(this)

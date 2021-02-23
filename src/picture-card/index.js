@@ -10,16 +10,17 @@ let rf = new IntlRelativeFormat('es');
 //LUEGO CREAMOS UNA FUNCION QUE NOS PERMITA RENDERIZAR LA IMAGEN CADA VEZ HAYA CAMBIOS
 module.exports = function pictureCards(pic) {
   let el;
+
   function render(picture) {
     return yo`<div class="card ${picture.liked ? 'liked' : ''}">
     <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" src="${picture.url}" ondblclick=${like.bind(null, null, true)} />
+      <img class="activator" src="${picture.src}" ondblclick=${like.bind(null, undefined)} />
       <i class="fas fa-award like-award ${picture.likedAward ? 'liked' : ''}"></i>
     </div>
     <div class="card-content">
       <a href="/${picture.user.username}" class="card-title">
         <img src="${picture.user.avatar}" class="avatar" />
-        <span class="username">${picture.user.username}</span>
+        <span class="username">${picture.user.name}</span>
       </a>
       <small class="right time">hace un momento</small>
       <p>
@@ -28,13 +29,13 @@ module.exports = function pictureCards(pic) {
         <span class="left likes">${picture.likes} Favorito</span>
       </p>
     </div>
-  </div>`;
+  </div>`
   };
 
-  function like(liked, dblclick) {
+  function like(liked) {
     //SE VA A EVALUAR LA CONDICION SI TIENE EL LIKE QUITARLO Y SI NO LO TIENE, AGREGARLO CON EL DBLCLICK
     //SE TIENE QUE AGREGAR UN DOBLE ASIGNACION PARA LA CONDICION Y QUE ASI LO MUESTRE SI NO LO TIENE O VICEVERSA
-      if (dblclick) {
+      if (liked === undefined) {
         pic.likedAward = pic.liked = !pic.liked;
         liked = pic.liked;
       } else {
@@ -43,25 +44,18 @@ module.exports = function pictureCards(pic) {
       }
     //SE LE INDICA A EL OBJETO CON SU PROPIEDAD pic.likes LA SUMA O LA RESTA
     pic.likes += liked ? 1 : -1;
+    let newEl = render(pic);
+    yo.update(el, newEl);
 
-    //SE CREA UNA NUEVA FUNCION QUE SE VA A ENCARGAR DE GUARDAR LOS NUEVOS CAMBIOS
-    function doRender() {
-      let newEl= render(pic);
-      //Y SE UTILIZA EL MÉTODO DE "yo.update()" COLOCANDO COMO PARÁMETRO EL ELEMENTO VIEJO Y EL NUEVO ELEMENTO ACTUALIZADO.
+    setTimeout(function () {
+      pic.likedAward = false;
+      let newEl = render(pic);
       yo.update(el, newEl);
-    }
-    //SE INICIALIZA LA FUNCION
-    doRender()
-
-    //LUEGO SE CREA UN TIEMPO DE INTERVALO PARA PODER QUITAR EL ESTILO DEL AWARD
-    setTimeout(function (){
-      pic.likedAward = false
-      doRender()
-    }, 1500);
+    }, 1500)
 
     //ESTE RETURN ME PERMITE EVITAR QUE SE VUELVA A REPETIR LA MISMA SENTECIA
     return false;
-  };
+  }
 
   el = render(pic);
   return el;

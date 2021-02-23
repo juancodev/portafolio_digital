@@ -11,7 +11,7 @@ const axios = require('axios');
 //nos conectamos al servidor de socket.io
 /* let socket = io.connect('http://portafoliodigital.test:10443'); */
 
-page('/', utils.loadAuth, header, loading, loadPicturesAxios, function (ctx, next){
+page('/', utils.loadAuth, header, loading, asyncLoad, function (ctx, next){
   title('Portafolio');
   let main = document.getElementById('main-container');
 
@@ -35,16 +35,20 @@ page('/', utils.loadAuth, header, loading, loadPicturesAxios, function (ctx, nex
 
 function loading (ctx, next) {
   // 1
-  let el = document.createElement('div');
+  let container = document.createElement('div');
+  let loadingEl = document.createElement('div');
   // 2
-  el.classList.add('loader');
+  container.classList.add('loader-container');
+  loadingEl.classList.add('loader');
   // 3
-  document.getElementById('main-container').appendChild(el);
+  container.appendChild(loadingEl);
+  let main = document.getElementById('main-container');
+  empty(main).appendChild(container);
   // 4
   next();
 }
 
-function loadPicturesAxios (ctx, next) {
+/* function loadPicturesAxios (ctx, next) {
   axios
     .get('/api/pictures')
     .then(function (res) {
@@ -54,6 +58,15 @@ function loadPicturesAxios (ctx, next) {
     .catch(function (err) {
       console.log(err);
     })
+} */
+
+async function asyncLoad(ctx, next) {
+  try {
+    ctx.pictures = await fetch('api/pictures').then(res => res.json());
+    next();
+  } catch (err) {
+    return console.log(err);
+  }
 }
 
 //await nos permite esperar hasta que las 2 promesas se cumplan como lo es fetch y then
