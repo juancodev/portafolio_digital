@@ -99,7 +99,6 @@ aplication.post('/login', passport.authenticate('local', {
 
 aplication.get('/logout', function (req, res) {
   req.logout();
-
   res.redirect('/');
 });
 
@@ -112,13 +111,6 @@ aplication.get('/auth/facebook/callback', passport.authenticate('facebook', {
 }));
 
 //creamos una función que nos va a garantizar si el usuario fue creado o no
-function ensureAuth (req, res, next) {
-  if (req.isAuthenticated()) {
-    return next()
-  }
-
-  res.status(401).send({ error: 'no esta autenticado' })
-}
 
 aplication.get('/whoami', function (req, res) {
   if (req.isAuthenticated()) {
@@ -133,24 +125,24 @@ aplication.get('/api/pictures', function (req, res, next){
   /* EN ESTE CASO PONDREMOS UN OBJETO CON LOS DATOS, ICONOS Y USUARIO QUIEN SUBIÓ LA FOTO
  EN LA PROPIEDAD "creatAt" CREAMOS UNA NUEVA INSTANCIA DE LA CLASE Date, EN DONDE SIGNIFICA 'new Date()' Hoy*/
 
-  client.listPictures(function (err, pictures) {
-    if (err) return res.send([]);
+ client.listPictures(function (err, pictures) {
+   if (err) return res.send([]);
 
-    //vamos a responder con el arreglo de imágenes que recibimos del cliente api
-    res.send(pictures);
+   //vamos a responder con el arreglo de imágenes que recibimos del cliente api
+   res.send(pictures);
   })
 });
 
 aplication.post('/api/pictures', ensureAuth, function (req, res) {
   upload(req, res, function (err){
     if (err) {
-      return res.send(500, "Error al subir archivo");
+      return res.status(500).send(`Error al subir archivo ${err.message}`);
     }
 
     let user = req.user;
     let token = req.user.token;
     let username = req.user.username;
-    let src = './uploads'
+    let src = req.file
     //MUY IMPORTANTE REVISAR PARA GOOGLE CLOUD 06:24 / let src = req.file.location;
 
     client.savePicture({
@@ -184,14 +176,21 @@ aplication.get('/api/user/:username', function (req, res){
 
 //RUTA PARA EL USUARIO
 aplication.get('/:username', (req, res)=>{
-    res.render('index', { title : `Portafolio - ${req.params.username}`});
+  res.render('index', { title : `Portafolio - ${req.params.username}`});
 });
 
 //RUTA PARA LAS FOTOS DE LOS USUARIOS
 aplication.get('/:username/:id', (req, res)=>{
-    res.render('index', { title : `Portafolio - ${req.params.username}`});
+  res.render('index', { title : `Portafolio - ${req.params.username}`});
 });
 
+function ensureAuth (req, res, next) {
+  if (req.isAuthenticated()) {
+    return next()
+  }
+
+  res.status(401).send({ error: 'no esta autenticado' })
+}
 
 /* Para crear un servidor con el protocolo https y su certificado de autofirmado */
 https.createServer({

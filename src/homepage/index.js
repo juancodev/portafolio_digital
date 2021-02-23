@@ -9,7 +9,7 @@ const io = require('socket.io-client');
 const axios = require('axios');
 
 //nos conectamos al servidor de socket.io
-let socket = io.connect('http://localhost:5151');
+/* let socket = io.connect('http://portafoliodigital.test:10443'); */
 
 page('/', utils.loadAuth, header, loading, loadPicturesAxios, function (ctx, next){
   title('Portafolio');
@@ -18,12 +18,12 @@ page('/', utils.loadAuth, header, loading, loadPicturesAxios, function (ctx, nex
   empty(main).appendChild(template(ctx.pictures));
 });
 
-socket.on('image', function (image) {
+/* socket.on('image', function (image) {
   let picturesEl = document.getElementById('pictures-container');
   let first = picturesEl.firstChild;
   let img = picture(image);
   picturesEl.insertBefore(img, first);
-})
+}) */
 
 /* 1: primero creamos una variable que almacena un elemento que crearemos con el método createElement(y adentro se le pasa la etiqueta html) dentro del DOM (document)
 
