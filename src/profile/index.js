@@ -7,8 +7,8 @@ const utils = require('../utils');
 
 // DE ESTA FORMA SE OBTIENEN PARÁMETROS EN PAGE "/:"
 page('/:username', utils.loadAuth, loadUser, header, function (ctx, next){
-  title(`Portafolio - ${ctx.params.username}`);
   let main = document.getElementById('main-container');
+  title(`Portafolio - ${ctx.user.username}`);
   empty(main).appendChild(template(ctx.user));
   $('.materialboxed').materialbox();
 })

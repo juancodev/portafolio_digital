@@ -12,6 +12,14 @@ const config = require('./config');
 const port = process.env.PORT || 10443;
 const fs = require('fs');
 const https = require('https');
+const cloudinary = require('cloudinary');
+
+//método que te permite iniciar sesión en cloudinary
+cloudinary.config({
+  cloud_name: config.cloudinary.cloud_name,
+  api_key: config.cloudinary.api_key,
+  api_secret: config.cloudinary.api_secret
+})
 
 //  Para instanciarlo
 let client = portafolio.createClient(config.client);
@@ -134,16 +142,17 @@ aplication.get('/api/pictures', function (req, res, next){
 });
 
 aplication.post('/api/pictures', ensureAuth, function (req, res) {
-  upload(req, res, function (err){
+  upload(req, res, async function (err){
     if (err) {
       return res.status(500).send(`Error al subir archivo ${err.message}`);
     }
 
+    const result = await cloudinary.v2.uploader.upload(req.file.path);
+
     let user = req.user;
     let token = req.user.token;
     let username = req.user.username;
-    let src = req.file
-    //MUY IMPORTANTE REVISAR PARA GOOGLE CLOUD 06:24 / let src = req.file.location;
+    let src = result.secure_url
 
     client.savePicture({
       src: src,

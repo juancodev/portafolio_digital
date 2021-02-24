@@ -9,7 +9,7 @@ let el = yo`<footer class="site-footer">
         </ul>
       </div>
       <div class="col s12 l3 push-l6 center-align">
-        © 2020 Portafolio Digital IUTAJS
+        © 2021 Portafolio Digital IUTAJS
       </div>
     </div>
   </div>

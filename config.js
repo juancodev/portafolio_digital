@@ -1,9 +1,11 @@
 'use strict'
 
 const config = {
-  /* Para la configuración de google cloud
-  aws (google cloud en este caso)
-  */
+  cloudinary: {
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET
+  },
   client: {
     endpoints: {
       pictures: 'http://api.portafolio_digital.com/picture',
