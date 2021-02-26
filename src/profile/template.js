@@ -1,4 +1,5 @@
 const yo = require('yo-yo');
+const html2pdf = require('html2pdf.js');
 //NO ES IMPORTANTE COLOCAR EL ARCHIVOS INDEX, YA QUE SI TUVIERA OTRO NOMBRE SÍ FUERA NECESARIO.
 const layout = require('../layout');
 
@@ -13,6 +14,15 @@ module.exports = function userPageTemplate(user){
           <div class="col s12 m10 offset-m1 l6 left-align">
             <h2 class="hide-on-large-only center-align">${user.name}</h2>
             <h2 class="hide-on-med-and-down left-align">${user.name}</h2>
+            <div class="fixed-action-btn horizontal">
+              <a class="btn-floating btn-large red accent-4">
+                <i class="large material-icons">mode_edit</i>
+              </a>
+              <ul>
+                <li id="savePdf" class="btn-floating blue"><i class="fas fa-file-pdf"></i>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -27,27 +37,38 @@ module.exports = function userPageTemplate(user){
       </div>
     </div>
   </div>`;
+
+  document.addEventListener("DOMContentLoaded", () => {
+  let button = document.getElementById('savePdf');
+  button.addEventListener("click", () => {
+    let elementoParaConvertir = document.body;
+    const opts = {
+    margin: 1,
+    filename: 'mi-perfil.pdf',
+    image: {
+      type: 'jpeg',
+      quality: 0.98
+    },
+    html2canvas: {
+      scale: 3,
+      letterRendering: true
+    },
+    jsPDF: {
+      unit: 'in',
+      format: 'a4',
+      orientation: 'portrait'
+    }
+  }
+    html2pdf()
+      .set(opts)
+      .from(elementoParaConvertir)
+      .save()
+      .catch (err => console.log (err))
+      .then(() => {
+        console.log('guardado');
+      })
+  })
+})
+
   return layout(el);
 }
-
-
-/*<a href="/${user.username}/${picture.id}" class="picture-container">
-    <img src="${picture.src}" class="picture" />
-    <div class="likes"><a href="#!"><i class="material-icons green200">star</i>${picture.likes}</a>
-    </div>
-  </a>
-
-
-  <div class="modal-footer">
-    <div class="btn btn-flat likes">
-      <i class="fas fa-star"></i> ${picture.likes} ME GUSTA
-    </div>
-    <div class="btn btn-flat">
-    </div>
-  </div>
-
-
-
-  <div class="media">
-  <img src="${picture.src}" class="materialboxed" data-caption=" ${picture.likes} ME GUSTA"/>
-  </div>*/

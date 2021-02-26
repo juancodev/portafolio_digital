@@ -6766,3 +6766,13 @@ body {
   display: block;
   transition: all .5s ease;
   opacity: 1; }
+
+a.entrar {
+  color: #010542; }
+  a.entrar .fas.fa-sign-in-alt {
+    color: #010542; }
+
+a.btn.btn-large.btn-flat.entrar:hover, a.btn-large.btn-flat.entrar:hover {
+  color: #fafafa; }
+  a.btn.btn-large.btn-flat.entrar:hover .fas.fa-sign-in-alt, a.btn-large.btn-flat.entrar:hover .fas.fa-sign-in-alt, a.btn-large.btn-flat.entrar.btn-small:hover .fas.fa-sign-in-alt {
+    color: #fafafa; }

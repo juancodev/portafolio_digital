@@ -15,8 +15,8 @@ let authCard = function (ctx) {
 
   let signin = yo`
     <div class="col s2 m6 push-s10 push-m10">
-      <a href="/signin" class="btn btn-large btn-flat">
-        Entrar
+      <a href="/signin" class="btn btn-large btn-flat entrar">
+        Entrar <i class="fas fa-sign-in-alt"></i>
       </a>
     </div>`
 

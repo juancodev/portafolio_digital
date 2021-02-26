@@ -258,10 +258,26 @@ $avatar-size: 48px;
   opacity: 0;
 }
 
-.like-award.liked{
+.like-award.liked {
   color: $primary-star;
   font-size: 12em;
   display: block;
   transition: all .5s ease;
   opacity: 1;
+}
+
+a.entrar {
+  color: $secondary-color;
+
+  .fas.fa-sign-in-alt {
+    color: $secondary-color;
+  }
+}
+
+a.btn.btn-large.btn-flat.entrar:hover {
+  color: #fafafa;
+
+  .fas.fa-sign-in-alt {
+    color: #fafafa;
+  }
 }
