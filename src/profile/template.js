@@ -19,7 +19,7 @@ module.exports = function userPageTemplate(user){
                 <i class="large material-icons">mode_edit</i>
               </a>
               <ul>
-                <li id="savePdf" class="btn-floating blue"><i class="fas fa-file-pdf"></i>
+                <li id="savePdf" class="btn-floating blue" onclick="${viewPdf}"><i class="fas fa-file-pdf"></i>
                 </li>
               </ul>
             </div>
@@ -38,9 +38,8 @@ module.exports = function userPageTemplate(user){
     </div>
   </div>`;
 
-  document.addEventListener("DOMContentLoaded", () => {
-  let button = document.getElementById('savePdf');
-  button.addEventListener("click", () => {
+  function viewPdf () {
+    document.getElementById('savePdf');
     let elementoParaConvertir = document.body;
     const opts = {
     margin: 1,
@@ -63,12 +62,12 @@ module.exports = function userPageTemplate(user){
       .set(opts)
       .from(elementoParaConvertir)
       .save()
-      .catch (err => console.log (err))
+      .catch(err => console.log(err))
       .then(() => {
-        console.log('guardado');
+        console.log('Guardado');
       })
-  })
-})
+  }
+
 
   return layout(el);
 }
