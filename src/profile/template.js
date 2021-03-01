@@ -9,7 +9,7 @@ module.exports = function userPageTemplate(user){
       <div class="col s12 m10 offset m1-l8 offset-l2 center-align heading">
         <div class="row">
           <div class="col s12 m10 offset-m1 l3 offset-l3 center">
-            <img src="${user.avatar}" alt="${user.name}" class="responsive-img circle" />
+            <img src="user.png" alt="${user.name}" class="responsive-img circle" />
           </div>
           <div class="col s12 m10 offset-m1 l6 left-align">
             <h2 class="hide-on-large-only center-align">${user.name}</h2>
@@ -71,3 +71,8 @@ module.exports = function userPageTemplate(user){
 
   return layout(el);
 }
+
+/*  IMPORTANTE VOLVER A COLOCAR
+
+ <img src="${user.avatar}" alt="${user.name}" class="responsive-img circle" />
+*/

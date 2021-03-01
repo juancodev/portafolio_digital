@@ -19,7 +19,7 @@ module.exports = function pictureCards(pic) {
     </div>
     <div class="card-content">
       <a href="/${picture.user.username}" class="card-title">
-        <img src="${picture.user.avatar}" class="avatar" />
+        <img src="user.png" class="avatar" />
         <span class="username">${picture.user.name}</span>
       </a>
       <small class="right time">hace un momento</small>
@@ -61,3 +61,8 @@ module.exports = function pictureCards(pic) {
   return el;
 
 };
+
+/* IMPORTANTE VOLVER A COLOCAR
+
+<img src="${picture.user.avatar}" class="avatar" />
+*/
